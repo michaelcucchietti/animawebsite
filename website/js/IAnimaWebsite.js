@@ -775,40 +775,45 @@ var AnimaLoader = AnimaLoader || {
         }
     },
     // creare showProgress con startLoadingVideo e migliorare hide progress inserendo stopLoaingVideo
-    loadHome: function() {
+    loadBase: function() {
         AnimaLoader.initTestResponsive();
         AnimaSections.initialize();
-        AnimaLoader.loadArrowAboutAnimation();
         AnimaMenu.initialize();                    // inizializza il menu
-        AnimaMisc.initDescriptors();
         AnimaSections.bindScrollbar();
     },
-    loader: function() {
-        AnimaLoader.testConnectionSpeed();
-        setTimeout(function() {                               // Inizializza i test che determinano i risultati della funzione "isMobile()"
-            if (AnimaLoader.connectionSpeed > 0) {
-                AnimaLoader.preloadAllImages();                                 // Carica le immagini
-                AnimaLoader.preloaded = true;
-            } else {
-                AnimaLoader.stopConnectionSpeed();
-            }
+    loadHome: function() {
+        AnimaLoader.loadBase();
+        AnimaLoader.loadArrowAboutAnimation();
+        AnimaMisc.initDescriptors();
+    },
+    loadDigitals: function() {
+        AnimaLoader.loadBase();
+        DetailSurfer.loadSurfers('detailsurfer');                           // carica gli elementi di dettaglio (vedere js e css specifici di detailsurfer)
+        DetailSurfer.updateSurferPositionOnResize();
+    },
+    loadLogoStudio: function() {
+        AnimaLoader.loadBase();
+        DetailSurfer.loadSurfers('detailsurfer');                           // carica gli elementi di dettaglio (vedere js e css specifici di detailsurfer)
+        DetailSurfer.updateSurferPositionOnResize();
+        AnimaLoader.loadStatsDetails();
+        AnimaGallery.initGallery();
+    },
+    loadContacts: function() {
+        AnimaLoader.loadBase();
+    },
+    loadPortfolio: function() {
+        AnimaLoader.loadBase();
+        (new AnimaPortfolio());                     // inizializza portfolio
+    },
+    loadSitemap: function() {
+        AnimaLoader.loadBase();
+        AnimaLoader.sitemapView = new AnimaSitemap.SitemapView();
+    },
+    loadComingSoon: function() {
+        AnimaLoader.loadBase();
+        AnimaLoader.loadCSVideo();
+        DetailSurfer.loadSurfers('detailsurfer');                           // carica gli elementi di dettaglio (vedere js e css specifici di detailsurfer)
+        DetailSurfer.updateSurferPositionOnResize();
 
-            DetailSurfer.loadSurfers('detailsurfer');                           // carica gli elementi di dettaglio (vedere js e css specifici di detailsurfer)
-            AnimaLoader.loadCSVideo();                                          // Carica il video del coming soon (A che sfarfalla)
-            AnimaLoader.loadStatsDetails();
-            AnimaLoader.changeHTMLIF_IE();                                      // Cambia alcune proprietà per una visualizzazione corretta e compatibile.
-            DetailSurfer.updateSurferPositionOnResize();
-            AnimaGallery.initGallery();
-
-            AnimaSections.initialize();
-            (new AnimaPortfolio());                     // inizializza portfolio
-            AnimaLoader.sitemapView = new AnimaSitemap.SitemapView();
-
-            AnimaSections.sectionManager.hideAllSections();
-            AnimaSections.sectionManager.showSection("");
-            AnimaHashes.hashManager.readAndElaborate();                         // force changing hash (for reload)
-            AnimaSections.sectionManager.showSection("about");
-
-        }, AnimaLoader.loadingTimerValue);
     }
 };
