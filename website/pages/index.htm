@@ -5,7 +5,6 @@
     <title>Anima - Design e Comunicazione</title>
     <meta name="description" content="In un mondo che corre verso il digitale, Anima offre supporto, strumenti e metodi a imprese e professionisti di ogni settore, per l'immagine e la comunicazione aziendale." />
 
-
     <script type="text/javascript" src="../js/base/utilityFramework.js"></script>
     <script type="text/javascript" src="../js/base/cssFramework.js"></script>
     <script type="text/javascript" src="../js/base/animationFramework.js"></script>
@@ -31,10 +30,10 @@
 <div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
     <a class="MenuButton"></a>
     <nav class="MenuEntries">
-        <a class="MenuEntry" href="#about">Home</a>
-        <a class="MenuEntry" href="#digital_communication">Digitals</a>
-        <a class="MenuEntry" href="#logo_studio">Logo Studio</a>
-        <a class="MenuEntry" href="#coming_soon">Coming Soon</a>
+        <a class="MenuEntry" link-id="home" onclick="AnimaSections.open(this)">Home</a>
+        <a class="MenuEntry" link-id="digitals" onclick="AnimaSections.open(this)">Digitals</a>
+        <a class="MenuEntry" link-id="logostudio" onclick="AnimaSections.open(this)">Logo Studio</a>
+        <a class="MenuEntry" link-id="comingsoon" onclick="AnimaSections.open(this)">Coming Soon</a>
     </nav>
 </div>
 <div class="MenuBar displayFlexDesktop" id="menuBar_desktop">
@@ -42,7 +41,7 @@
         <div class="child"><div class="icon"></div> </div>
     </a>
     <nav class="MenuEntries displayNone">
-        <a class="MenuEntry" href="#about">
+        <a class="MenuEntry" link-id="home" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
                     <div class="media about" ></div>
@@ -51,7 +50,7 @@
 
             <div class="text">Home</div>
         </a>
-        <a class="MenuEntry" href="#digital_communication">
+        <a class="MenuEntry" link-id="digitals" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
                     <div class="media digitals" ></div>
@@ -60,7 +59,7 @@
 
             <div class="text">Digitals</div>
         </a>
-        <a class="MenuEntry" href="#logo_studio">
+        <a class="MenuEntry" link-id="logostudio" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
                     <div class="media logostudio" ></div>
@@ -69,7 +68,7 @@
 
             <div class="text">Logo Studio</div>
         </a>
-        <a class="MenuEntry" href="#coming_soon">
+        <a class="MenuEntry" link-id="comingsoon" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
                     <div class="media cs" ></div>
@@ -86,7 +85,7 @@
     </div>
 </div>
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
-    <section class="DefaultContainer SectionBlock" id="about">
+    <section class="DefaultContainer SectionBlock" id="pagesection">
         <article class="ContentBlock contentAbout" >
             <div class="data">
                 <div class="contentAnima"  >
@@ -134,7 +133,7 @@
                             segui passo dopo passo lo sviluppo grafico e scopri come un logo
                             vincente può fare la differenza.
                         </p>
-                        <a class="LSPortfolio" href="#portfolio">Apri portfolio</a>
+                        <a class="LSPortfolio" link-id="portfolio" onclick="AnimaSections.open(this)">Apri portfolio</a>
                     </div>
                     <div class="target displayNone" anima-id="serviceUpgrade">
                         <p>
@@ -255,26 +254,27 @@
                 </h2>
             </div>
         </article>
+
+        <footer class="contentAntracite">
+            <div class="container links">
+                <a link-id="contacts" onclick="AnimaSections.open(this)">Contatti</a>
+                <a link-id="sitemap" onclick="AnimaSections.open(this)">Mappa del sito</a>
+            </div>
+            <div class="separatorFooter"></div>
+            <div class="container anima">
+                <div class="logo"></div>
+            </div>
+            <div class="separatorFooter"></div>
+            <div class="container info">
+                <p>
+                    Official Anima Website - developed by Anima<br />
+                    p.iva 10774500960<br />
+                    Via Legnano 18, Bollate, 20021 MI
+                </p>
+            </div>
+        </footer>
     </section>
 </div>
-<footer class="contentAntracite">
-    <div class="container links">
-        <a href="#contacts">Contatti</a>
-        <a href="#sitemap">Mappa del sito</a>
-    </div>
-    <div class="separatorFooter"></div>
-    <div class="container anima">
-        <div class="logo"></div>
-    </div>
-    <div class="separatorFooter"></div>
-    <div class="container info">
-        <p>
-            Official Anima Website - developed by Anima<br />
-            p.iva 10774500960<br />
-            Via Legnano 18, Bollate, 20021 MI
-        </p>
-    </div>
-</footer>
 
 </body>
 </html>

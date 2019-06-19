@@ -37,256 +37,68 @@ var AnimaGallery = AnimaGallery || {
         AnimaGallery.gallery = document.getElementById('statsGallery');
     }
 };
-var AnimaHashes = AnimaHashes || {
-    HashEntry: function(hash, test, func, funcArgs) {
-        this.hash = hash;
-        this.test = test;
-        this.operation = func;
-        this.funcArgs = funcArgs;
-
-        this.equals = function(entry) {
-            return this.hash === entry.hash;
-        };
-    },
-    HashManager: function() {
-        this.entries = [];
-        this.autoOpenSectionIntervalID = null;
-        this.elaborating = false;
-        this.lastElaborated = null;
-
-
-        this.addEntry = function(hash, test, func, funcArgs) {
-            var entry = new AnimaHashes.HashEntry(hash, test, func, funcArgs);
-            this.entries.push(entry);
-        };
-        this.elaborate = function(hash) {
-            if(hash === this.lastElaborated)
-                return;
-
-            for(var i = 0; i < this.entries.length; i++) {
-                var entry = this.entries[i];
-                if(entry.test(hash, entry.hash))
-                    entry.operation(entry.funcArgs);
-            }
-
-            this.lastElaborated = hash;
-        };
-        this.readAndElaborate = function() {
-            var hashValue = window.location.hash;
-            if(!AnimaHashes.hashManager.elaborating) {
-                AnimaHashes.hashManager.elaborating = true;
-                AnimaHashes.hashManager.elaborate(hashValue);
-                AnimaHashes.hashManager.elaborating = false;
-            }
-        };
-
-
-        /* This lines "override" goBack and goForward browser's "functions". Using hash parameter of window location
-         * we can determine which section has to be shown.
-         * In this perspective showSection method just check eventually preloading needs and than changes the hash.
-         * This interval triggers and, seeing the new hash is different from the opened one, calls the showSectionById method.
-         * This method validate the passed parameter (checking null condition and section existence).
-         * Once validated old section is hidden and new one is shown, with every state parameter updated.
-         * This allows us to use back and forward browser's buttons :)
-         */
-        if(this.autoOpenSectionIntervalID != null)
-            clearInterval(this.autoOpenSectionIntervalID);
-
-        this.autoOpenSectionIntervalID = setInterval(this.readAndElaborate, 35);
-    },
-    hashManager: null,
-    initialize: function() {
-        AnimaHashes.hashManager = new AnimaHashes.HashManager();
-    }
-};
 
 var AnimaSections = AnimaSections || {
     SectionManager: function() {
-        this.idToOpen = null;
-        this.opening = false;
-        this.openedID = null;
-        this.currentVisible = null;
-        this.availableSections = document.getElementsByClassName("SectionBlock");
+        this.sectionLinkManager = function () {
+            this.sectionLink = function(id, link) {
+                this.id = id;
+                this.link = link;
 
-        for(var i = 0; i < this.availableSections.length; i++) {
-            var sectionHash = "#" + this.availableSections[i].id;
-            AnimaHashes.hashManager.addEntry(
-                sectionHash,
-                function(currentHash, entryHash) {
-                    var sectionID = currentHash.substring(1);
-                    return !AnimaSections.sectionManager.opening && AnimaSections.sectionManager.openedID !== sectionID && currentHash === entryHash;
-                },
-                function (sectionID) {
-                    AnimaSections.sectionManager.changeSection(sectionID);
-                },
-                this.availableSections[i].id
-            );
+                this.open = function() {
+                    location.href = this.link;
+                }
+            };
+
+            this.sectionLinks = [];
+            this.addSectionLink = function(id, link) {
+                var l = new this.sectionLink(id, link);
+                this.sectionLinks.push(l);
+            };
+            this.openID = function(id) {
+                for(var i = 0; i < this.sectionLinks.length; i++) {
+                    var slink = this.sectionLinks[i];
+                    if(slink.id === id) {
+                        slink.open();
+                        return;
+                    }
+                }
+            }
+        };
+        this.sections = new this.sectionLinkManager();
+
+        this.sections.addSectionLink('home', 'index.htm');
+        this.sections.addSectionLink('digitals', 'digitals.htm');
+        this.sections.addSectionLink('logostudio', 'logostudio.htm');
+        this.sections.addSectionLink('comingsoon', 'comingsoon.htm');
+        this.sections.addSectionLink('contacts', 'contacts.htm');
+        this.sections.addSectionLink('portfolio', 'portfolio.htm');
+        this.sections.addSectionLink('sitemap', 'sitemap.htm');
+
+        this.open = function(sectionID) {
+            this.sections.openID(sectionID);
         }
-
-        this.defineSectionEvent = function(target) {
-            if(target == null || !AnimaUtility.isElement(target))
-                return;
-
-            if(!target.hasOwnProperty('eventDefined'))
-                target.eventDefined = true;
-            else
-                return;
-
-            target.addEventListener('preloaded', this.preloadListener);
-        };
-        this.preloadListener = function() {
-            var target = document.getElementById(AnimaSections.sectionManager.idToOpen);
-            if(target == null || !AnimaUtility.isElement(target))
-                return;
-
-            target.removeEventListener('preloaded', this.preloadListener);
-            AnimaLoader.hideProgress();
-            AnimaSections.sectionManager.update();
-        };
-        this.showSection = function(idOrObj) {
-            if(typeof idOrObj === 'string') {
-                window.location.hash = "#" + idOrObj;
-            } else if(AnimaUtility.isElement(idOrObj)) {
-                window.location.hash = "#" + idOrObj.id;
-            }
-        };
-        this.changeSection = function(id) {
-            if(id == null || typeof id !== 'string' || !this.sectionExists(id)) {
-                return;
-            }
-
-            this.opening = true;
-            this.idToOpen = id;
-            var target = document.getElementById(id);
-            if(target == null || !AnimaUtility.isElement(target))
-                return;
-            this.defineSectionEvent(target);
-            target.sectionManager = this;
-
-
-            if(!AnimaLoader.preloaded && !AnimaPreload.cacheRegistry.isCached(target))
-                AnimaLoader.showProgress();
-
-            AnimaPreload.preloadElement(target);
-        };
-        this.update = function() {
-            if(this.idToOpen === this.openedID)
-                return;
-
-            var target = document.getElementById(this.idToOpen);
-            if(target == null || !AnimaUtility.isElement(target))
-                return;
-
-            if(this.openedID != null) {
-                this.hideSection(this.openedID);
-                this.currentVisible.removeChild(AnimaSections.footer);
-            }
-
-            target.appendChild(AnimaSections.footer);
-
-            target.removeClass("displayNone");
-            this.openedID = this.idToOpen;
-            this.currentVisible = target;
-            this.opening = false;
-
-            target.dispatchEvent(new Event('shown'));
-
-            this.scrollAllUp(this.currentVisible);
-        };
-
-
-        this.sectionExistsById = function(id) {
-            if(id == null || typeof id !== 'string')
-                return false;
-
-            for(var index = 0; index < this.availableSections.length; index++) {
-                if(id === this.availableSections[index].id)
-                    return true;
-            }
-
-            return false;
-        };
-        this.sectionExistsByObj = function(o) {
-            if(!AnimaUtility.isElement(o))
-                return false;
-
-            return this.sectionExistsById(o.id);
-        };
-        this.sectionExists = function(sectionIDorObj) {
-            if(AnimaUtility.isElement(sectionIDorObj))
-                return this.sectionExistsByObj(sectionIDorObj);
-            else if (typeof sectionIDorObj === 'string')
-                return this.sectionExistsById(sectionIDorObj);
-
-            return false;
-        };
-        this.scrollAllUp = function(sectionElem) {
-            if(isMobile()) {
-                if(sectionElem.children.length > 0) {
-                    var deltaHeight = getJSValue(sectionElem.children[0], 'top');
-                    (new Animations.AnimationScrollTop(sectionElem, 0.5, AnimationCurves.exponential, deltaHeight)).start();
-                }
-            } else {
-                AnimaScrollbar.scrollbar.bind(sectionElem);
-                this.scrollTo(0);
-            }
-        };
-        this.scrollTo = function(value) {
-            if(value == null || typeof value !== 'number' || value < 0)
-                return;
-
-            if(isMobile()) {
-                var maxValue = convertValue(getJSValue(sectionElem, 'height')) - convertValue('100vh');
-                if(value > maxValue)
-                    value = maxValue;
-
-                if(sectionElem.children.length > 0) {
-                    (new Animations.AnimationScrollTop(sectionElem, 0.5, AnimationCurves.exponential, value + 'px')).start();
-                }
-            } else {
-                AnimaScrollbar.scrollbar.setScrollbarPosition(value);
-            }
-        };
-        this.hideSectionById = function(id) {
-            if(id == null || typeof id !== 'string' ||  id.length === 0) {
-                return;
-            }
-
-
-            var elem = document.getElementById(id);
-            if(elem == null || typeof elem === 'undefined')
-                return;
-
-            elem.addClass("displayNone");
-        };
-        this.hideSectionByObj = function(obj) {
-            if(obj == null || !AnimaUtility.isElement(obj))
-                return;
-            
-            obj.addClass("displayNone");
-        };
-        this.hideSection = function(sectionIdOrObj) {
-            if(typeof sectionIdOrObj === 'string')
-                this.hideSectionById(sectionIdOrObj);
-            else if(AnimaUtility.isElement(sectionIdOrObj))
-                this.hideSectionByObj(sectionIdOrObj);
-            
-            // In all other cases, just end this method
-        };
-        this.hideAllSections = function() {
-            for(var counter = 0; counter < this.availableSections.length; counter++) {
-                this.hideSection(this.availableSections[counter]);
-            }
-        };
-
-
-
     },
     sectionManager: null,
-    footer: null,
     initialize: function() {
-        AnimaSections.sectionManager = new AnimaSections.SectionManager();
-        AnimaSections.footer = document.getElementsByTagName("footer")[0];
+            AnimaSections.sectionManager = new AnimaSections.SectionManager();
+    },
+    open: function(section) {
+        if(AnimaSections.sectionManager == null) {
+            console.log("sectionManager has not been initialized");
+        } else {
+            if(section.isElement()) {
+                AnimaSections.sectionManager.open(section.getAttribute('link-id'));
+            }
+        }
+    },
+    bindScrollbar: function() {
+        if(!isMobile()) {
+            var target = document.getElementById("pagesection");
+            if(target != null) {
+                AnimaScrollbar.scrollbar.bind(target);
+            }
+        }
     }
 };
 var AnimaMenu = AnimaMenu || {
@@ -964,15 +776,16 @@ var AnimaLoader = AnimaLoader || {
     },
     // creare showProgress con startLoadingVideo e migliorare hide progress inserendo stopLoaingVideo
     loadHome: function() {
+        AnimaLoader.initTestResponsive();
+        AnimaSections.initialize();
         AnimaLoader.loadArrowAboutAnimation();
         AnimaMenu.initialize();                    // inizializza il menu
         AnimaMisc.initDescriptors();
+        AnimaSections.bindScrollbar();
     },
     loader: function() {
         AnimaLoader.testConnectionSpeed();
-        AnimaHashes.initialize();
-        setTimeout(function() {
-            AnimaLoader.initTestResponsive();                                   // Inizializza i test che determinano i risultati della funzione "isMobile()"
+        setTimeout(function() {                               // Inizializza i test che determinano i risultati della funzione "isMobile()"
             if (AnimaLoader.connectionSpeed > 0) {
                 AnimaLoader.preloadAllImages();                                 // Carica le immagini
                 AnimaLoader.preloaded = true;
