@@ -204,7 +204,7 @@ var AnimaSitemap = AnimaSitemap || {
         this.controller = controller;
         this.work = function() {
             this.controller.goLink();
-        }
+        };
         this.hover = function() {
             this.buttonElement.addClass('linkHover');
         };
@@ -306,7 +306,7 @@ var AnimaSitemap = AnimaSitemap || {
         };
         this.goLink = function() {
             if(this.map.hasLink())
-                AnimaSections.sectionManager.showSection(this.map.getLink());
+                AnimaSections.openID(this.map.getLink());
         };
         this.getChildren = function() {
             return this.map.getChildren();
@@ -349,7 +349,7 @@ var AnimaSitemap = AnimaSitemap || {
     },
     SitemapView: function() {
         this.controller = new AnimaSitemap.SitemapController(this);
-        this.section = document.getElementById('sitemap');
+        this.section = document.body.getElementsByAttribute('anima-id', 'sitemap')[0];
         this.section.controller = this.controller;
         this.nameElement = this.section.getElementsByAttribute('anima-id', 'name')[0];
         this.descElement = this.section.getElementsByAttribute('anima-id', 'description')[0];
@@ -451,11 +451,11 @@ var AnimaSitemap = AnimaSitemap || {
             }
         };
 
-        this.section.addEventListener('shown', function () {
+        /*this.section.addEventListener('shown', function () {
             this.controller.openRoot();
-        })
+        })*/
 
-
+        this.controller.openRoot();
     }
 };
 

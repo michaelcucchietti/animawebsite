@@ -94,6 +94,18 @@ var AnimaSections = AnimaSections || {
             }
         }
     },
+    openID: function(id) {
+        if(AnimaSections.sectionManager == null) {
+            console.log("sectionManager has not been initialized");
+        } else {
+            if(typeof id === 'string') {
+                AnimaSections.sectionManager.open(id);
+            } else {
+                console.log("input parameter is not a string");
+            }
+        }
+
+    },
     bindScrollbar: function() {
         if(!isMobile()) {
             var target = document.getElementById("pagesection");
