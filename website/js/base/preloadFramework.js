@@ -80,7 +80,7 @@ var AnimaPreload = AnimaPreload || {
 
 
             var preloadSources = eTarget.getElementsByAttributeName("animasource");
-            var preloadClasses = eTarget.getElementsByAttributeName("anima-addclasses");
+            // var preloadClasses = eTarget.getElementsByAttributeName("anima-addclasses");
 
             if(preloadSources.length === 0)
                 this.checkPreloadComplete();        // no elements to preload (call preloaded)
@@ -100,14 +100,14 @@ var AnimaPreload = AnimaPreload || {
                     }
                 }
             }
-            for(var c = 0; c < preloadClasses.length; c++) {
+            /*for(var c = 0; c < preloadClasses.length; c++) {
                 var classElement = preloadClasses[c];
                 var classValue = classElement.getAttribute("anima-addclasses");
 
                 if(classValue != null && typeof classValue === 'string' && classValue.length > 0) {
                     classElement.addClasses(classValue);
                 }
-            }
+            }*/
 
 
         };
