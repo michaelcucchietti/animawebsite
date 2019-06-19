@@ -305,10 +305,11 @@ var AnimaMenu = AnimaMenu || {
             }
         });
         this.menuButton.addEventListener('click', function() {
-            if(!AnimaMenu.mobileMenu.menuOpened) {
-                window.location.hash = "#menu";
+            var menu = AnimaMenu.mobileMenu;
+            if(!menu.menuOpened) {
+                menu.open();
             } else {
-                window.location.hash = "#" + AnimaSections.sectionManager.openedID;
+                menu.close();
             }
         });
 
@@ -429,9 +430,9 @@ var AnimaMenu = AnimaMenu || {
             menu.changingState = true;
             var opened = menu.menuOpened;
             if(opened) {
-                window.location.hash = "#" + AnimaSections.sectionManager.openedID;
+                menu.close();
             } else {
-                window.location.hash = "#menu";
+                menu.open();
             }
             menu.disableDueAnimation(opened);
 
@@ -576,27 +577,6 @@ var AnimaMenu = AnimaMenu || {
     MenuManager: function() {
         this.menuObj = isMobile() ? AnimaMenu.mobileMenu : AnimaMenu.desktopMenu;
         this.base_color_menu = [40,40,40];
-        this.hashMenu = "#menu";
-
-        AnimaHashes.hashManager.addEntry(
-            this.hashMenu,
-            function(hash, entryHash) {
-                return hash === entryHash;
-            },
-            function() {
-                AnimaMenu.menuManager.menuObj.open();
-            }
-        );
-        AnimaHashes.hashManager.addEntry(
-            this.hashMenu,
-            function(hash, entryHash) {
-                return AnimaMenu.menuManager.menuObj.menuOpened && hash !== entryHash;
-            },
-            function() {
-                AnimaMenu.menuManager.menuObj.close();
-            }
-        );
-
 
 
         /* Behaviors */
@@ -984,7 +964,6 @@ var AnimaLoader = AnimaLoader || {
     },
     // creare showProgress con startLoadingVideo e migliorare hide progress inserendo stopLoaingVideo
     loadHome: function() {
-        AnimaHashes.initialize();
         AnimaLoader.loadArrowAboutAnimation();
         AnimaMenu.initialize();                    // inizializza il menu
         AnimaMisc.initDescriptors();
