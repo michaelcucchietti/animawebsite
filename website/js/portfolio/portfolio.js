@@ -1,5 +1,5 @@
 var AnimaPortfolio = function() {
-    this.section = document.getElementById('portfolio');
+    this.section = document.body.getElementsByAttribute('anima-id', 'portfolioSection')[0];
     this.section.data = this.section.getElementsByAttribute('anima-id', 'portfolioContent')[0];
     this.section.scrollUp = function() {
         if(this.hasOwnProperty('sectionManager'))

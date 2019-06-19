@@ -83,12 +83,14 @@ var AnimaSections = AnimaSections || {
     initialize: function() {
             AnimaSections.sectionManager = new AnimaSections.SectionManager();
     },
-    open: function(section) {
+    open: function(linkedElement) {
         if(AnimaSections.sectionManager == null) {
             console.log("sectionManager has not been initialized");
         } else {
-            if(section.isElement()) {
-                AnimaSections.sectionManager.open(section.getAttribute('link-id'));
+            if(linkedElement.isElement() && linkedElement.hasAttribute('link-id')) {
+                AnimaSections.sectionManager.open(linkedElement.getAttribute('link-id'));
+            } else {
+                console.log("Item is not an element or has not got 'link-id' attribute set");
             }
         }
     },
