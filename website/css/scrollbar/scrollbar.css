@@ -1,0 +1,74 @@
+div.scrollbar {
+    display: flex;
+    position: absolute;
+    top:0;
+    right:0;
+
+    padding:0;
+    margin:0;
+    border:0;
+
+    box-sizing: border-box;
+    z-index: 100;
+
+    background-color: rgba(40,40,40,0.2);
+    cursor: url('../../images/cursors/white_contrast.cur'), auto;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+div.scrollbar div.wider, div.scrollbar div.wider div.seeker {
+    display: block;
+    position: relative;
+    top:0;
+    left:0;
+
+    padding: 0;
+    margin: 0;
+    border:0;
+
+    box-sizing: border-box;
+}
+
+div.scrollbar div.wider {
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+}
+
+div.scrollbar div.wider div.seeker {
+    width: 50%;
+    background-color: rgba(40,40,40,0.4);
+}
+
+
+/* DESKTOP */
+@media only screen and (max-resolution:150dpi) and (min-aspect-ratio: 1/1), only screen and (-webkit-max-device-pixel-ratio:1.51) and (min-aspect-ratio: 1/1), only screen and (-o-min-device-pixel-ratio:0/1) and (min-aspect-ratio: 1/1){
+    div.scrollbar {
+        height: 100vh;
+        top: 0;
+        width: 0.8vw;
+    }
+
+    div.scrollbar div.wider {
+        height: 10vh;
+    }
+
+    div.scrollbar div.seeker {
+        height: 100%;
+        -webkit-border-radius: 0.2vw;
+        border-radius: 0.2vw;
+    }
+}

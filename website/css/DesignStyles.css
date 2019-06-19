@@ -1,0 +1,232 @@
+@font-face {
+    font-family: "Roboto";
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+
+/*
+    INIZIO DEFINIZIONI
+*/
+.DefaultContainer {
+
+}           /* First level element */
+section.SectionBlock{
+
+}               /* First level element */
+article.ContentBlock {
+
+}               /* First level element */
+div.LoadingBlock {
+    z-index:100001;
+    background-color: rgb(15,15,15);
+    color: transparent;
+    text-transform: uppercase;
+}               /* First level element */
+
+div.SectionsContainer {
+    z-index: 0;
+}          /* Second level element */
+div.MenuBar {
+    z-index: 100000;
+}                    /* Second level element */
+nav.MenuEntries {
+
+}                /* second level element */
+a.MenuEntry {
+}
+a.MenuButton {
+}                   /* Second level element */
+div.separator {
+    background-color: rgb(40,40,40);
+    box-shadow: 0 0 4vh 1vh rgba(30,30,30,0.3);
+    z-index:0;
+    cursor: url('../images/cursors/white_contrast.cur'), auto;
+}
+footer {
+    color: rgb(224,224,224);
+    text-shadow: none;
+}
+footer div.anima div.logo {
+    background: url("../images/contacts/items/logoAnima.png") no-repeat scroll center;
+    background-size: contain;
+}
+
+/* DESKTOP */
+@media only screen and (max-resolution:150dpi) and (min-aspect-ratio: 1/1), only screen and (-webkit-max-device-pixel-ratio:1.51) and (min-aspect-ratio: 1/1), only screen and (-o-min-device-pixel-ratio:0/1) and (min-aspect-ratio: 1/1){
+    * {
+        cursor: inherit;
+    }
+    div.MenuBar {
+        cursor: url('../images/cursors/white_contrast.cur'), auto;
+    }
+    div.MenuBar div.buttonContainer {
+        background: transparent;
+    }
+    a.MenuEntry {
+        color: whitesmoke;
+        border:0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    a.MenuButton {
+        -webkit-border-radius: 4.5vh;
+        -moz-border-radius: 4.5vh;
+        border-radius: 4.5vh;
+        background-color: rgba(132,132,132, 0.2);
+        cursor: url('../images/cursors/white_contrast.cur'), auto;
+    }
+    a.MenuButton div.child, a.MenuButton div.child div.icon {
+        cursor: url('../images/cursors/white_contrast.cur'), auto;
+        background-color: rgb(40,40,40);
+    }
+    a.MenuButton div.child {
+        -webkit-border-radius: 3.25vh;
+        -moz-border-radius: 3.25vh;
+        border-radius: 3.25vh;
+    }
+    a.MenuButton div.child div.icon {
+        -webkit-border-radius: 2.75vh;
+        -moz-border-radius: 2.75vh;
+        border-radius: 2.75vh;
+    }
+    a.MenuButton div.child div.icon {
+        background: url("../images/menu/menu_icon_mobile.png") no-repeat local center;
+        -webkit-background-size: 40%;
+        background-size: 40%;
+    }
+    nav.MenuEntries {
+        cursor: url('../images/cursors/white_contrast.cur'), auto;
+    }
+    nav.MenuEntries div.menuSeparator {
+        background-color: rgb(224,224,224);
+    }
+    a.MenuEntry, a.MenuEntry * {
+        cursor: inherit;
+        background-color: transparent;
+    }
+    a.MenuEntry div.icon {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-origin: content-box;
+        background-color: rgba(132,132,132, 0.2);
+        border-radius: 4.5vh;
+    }
+    a.MenuEntry div.icon div.media {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: rgb(40,40,40);
+        border-radius: 4.5vh;
+    }
+    a.MenuEntry div.text {
+        color: rgb(224,224,224);
+        opacity: 0;
+        filter: alpha(opacity=0);
+        background-color: rgba(40,40,40, 1);
+        border-radius: 2.5vh;
+    }
+    
+    
+    div.about {
+        background-image: url("../images/menu/about.png");
+    }
+    div.logostudio {
+        background-image: url("../images/menu/logostudio.png");
+    }
+    div.digitals {
+        background-image: url("../images/menu/digitals.png");
+    }
+    div.cs {
+        background-image: url("../images/menu/cs.png");
+    }
+    footer div.separatorFooter {
+        background-color: rgba(224,224,224,0.3);
+    }
+    footer div.container {
+
+    }
+    footer div.links {
+    }
+    footer div.links a {
+        background-color: transparent;
+        text-decoration: none;
+        cursor: inherit;
+        color: rgb(224,224,224);
+
+    }
+    footer div.info p {
+
+        text-align: center;
+    }
+    footer div.links a:hover {
+        background-color: rgba(224,224,224,0.2);
+        cursor: inherit;
+    }
+}
+
+/*SMARTPHONE */
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100), only screen and (max-aspect-ratio: 1/1) {
+    * {
+        cursor: auto!important;
+    }
+    div.MenuBar {
+        background-color: rgb(40,40,40);
+        box-shadow: 0 0 2vh 0.1vh rgba(30,30,30, 0.6);
+    }
+    nav.MenuEntries {
+
+    }
+    a.MenuEntry {
+        font-family: 'Roboto', sans-serif;
+        color: whitesmoke;
+        border:0;
+        background-color: transparent;
+        text-decoration: none;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    a.MenuButton {
+        background: url("../images/menu/menu_icon_mobile.png") no-repeat local center;
+        -webkit-background-size: 40%;
+        background-size: 40%;
+    }
+
+    a.MenuEntry:hover {
+        background-color:rgba(200,200,200,0.3);
+    }
+
+    footer div.anima {
+        border-top: 0.2vh solid rgba(224,224,224,0.5);
+    }
+    footer div.info p {
+        text-align: center;
+    }
+    footer div.links a {
+        background-color: rgba(224,224,224,0.3);
+        text-decoration: none;
+        color: rgb(224,224,224);
+    }
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: landscape), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: landscape), only screen and (max-aspect-ratio: 1/1) and (orientation: landscape) {
+    a.MenuEntry {
+        border: 0.1vw solid rgb(224,224,224);
+    }
+    footer div.info p {
+
+    }
+    footer div.links a {
+
+    }
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: portrait), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: portrait), only screen and (max-aspect-ratio: 1/1) and (orientation: portrait) {
+    a.MenuEntry {
+        border: 0;
+    }
+    footer div.info p {
+
+    }
+    footer div.links a {
+
+    }
+}

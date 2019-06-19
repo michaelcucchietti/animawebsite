@@ -1,0 +1,877 @@
+.Portfolio {
+    height: auto;
+}
+.contentPortfolioPreviews {
+    background-color: rgb(224,224,224);
+    cursor: url('../../images/cursors/black_contrast.cur'), auto;
+}
+.contentPortfolioGallery {
+    background-color: rgb(224,224,224);
+    cursor: url('../../images/cursors/black_contrast.cur'), auto;
+}
+.logoNeozone {
+    background-image: url('../../images/portfolio/neozone.jpg');
+}
+.logoRoxana {
+    background-image: url('../../images/portfolio/roxana.jpg');
+}
+.logoSmash {
+    background-image: url('../../images/portfolio/smash.jpg');
+}
+.logoPlastix {
+    background-image: url('../../images/portfolio/plastix.jpg');
+}
+.logoBowlinghost {
+    background-image: url('../../images/portfolio/bowlinghost.jpg');
+}
+.logoDigipix {
+    background-image: url('../../images/portfolio/digipix.jpg');
+}
+.logoE2 {
+    background-image: url('../../images/portfolio/E2.jpg');
+}
+.logoGeon {
+    background-image: url('../../images/portfolio/geon.jpg');
+}
+.logoMemini {
+    background-image: url('../../images/portfolio/memini.jpg');
+}
+.logoNautilus {
+    background-image: url('../../images/portfolio/nautilus.jpg');
+}
+.logoSafi {
+    background-image: url('../../images/portfolio/safi.jpg');
+}
+.logoMilli {
+    background-image: url('../../images/portfolio/milli.jpg');
+}
+
+
+
+.neozone000 {
+    background-image: url('../../images/portfolio/neozone/000.png');
+}
+.neozone001 {
+    background-image: url('../../images/portfolio/neozone/001.png');
+}
+.neozone002 {
+    background-image: url('../../images/portfolio/neozone/002.png');
+}
+.roxana000 {
+    background-image: url('../../images/portfolio/roxana/000.png');
+}
+.roxana001 {
+    background-image: url('../../images/portfolio/roxana/001.png');
+}
+.roxana002 {
+    background-image: url('../../images/portfolio/roxana/002.jpg');
+}
+.smash000 {
+    background-image: url('../../images/portfolio/smash/000.png');
+}
+.smash001 {
+    background-image: url('../../images/portfolio/smash/001.png');
+}
+.smash002 {
+    background-image: url('../../images/portfolio/smash/002.png');
+}
+.plastix000 {
+    background-image: url('../../images/portfolio/plastix/000.png');
+}
+.plastix001 {
+    background-image: url('../../images/portfolio/plastix/001.png');
+}
+.plastix002 {
+    background-image: url('../../images/portfolio/plastix/002.png');
+}
+.safi000 {
+    background-image: url('../../images/portfolio/safi/000.png');
+}
+.safi001 {
+    background-image: url('../../images/portfolio/safi/001.png');
+}
+.safi002 {
+    background-image: url('../../images/portfolio/safi/002.png');
+}
+.nautilus000 {
+    background-image: url('../../images/portfolio/nautilus/000.png');
+}
+.nautilus001 {
+    background-image: url('../../images/portfolio/nautilus/001.png');
+}
+.nautilus002 {
+    background-image: url('../../images/portfolio/nautilus/002.png');
+}
+.geon000 {
+    background-image: url('../../images/portfolio/geon/000.png');
+}
+.geon001 {
+    background-image: url('../../images/portfolio/geon/001.png');
+}
+.geon002 {
+    background-image: url('../../images/portfolio/geon/002.png');
+}
+.E2000 {
+    background-image: url('../../images/portfolio/E2/000.png');
+}
+.E2001 {
+    background-image: url('../../images/portfolio/E2/001.png');
+}
+.E2002 {
+    background-image: url('../../images/portfolio/E2/002.png');
+}
+.digipix000 {
+    background-image: url('../../images/portfolio/digipix/000.png');
+}
+.digipix001 {
+    background-image: url('../../images/portfolio/digipix/001.png');
+}
+.digipix002 {
+    background-image: url('../../images/portfolio/digipix/002.png');
+}
+.memini000 {
+    background-image: url('../../images/portfolio/memini/000.png');
+}
+.memini001 {
+    background-image: url('../../images/portfolio/memini/001.jpg');
+}
+.memini002 {
+    background-image: url('../../images/portfolio/memini/002.png');
+}
+.bowlinghost000 {
+    background-image: url('../../images/portfolio/bowlinghost/000.png');
+}
+.bowlinghost001 {
+    background-image: url('../../images/portfolio/bowlinghost/001.png');
+}
+.bowlinghost002 {
+    background-image: url('../../images/portfolio/bowlinghost/002.png');
+}
+.milli000 {
+    background-image: url('../../images/portfolio/milli/000.png');
+}
+.milli001 {
+    background-image: url('../../images/portfolio/milli/001.png');
+}
+.milli002 {
+    background-image: url('../../images/portfolio/milli/002.png');
+}
+
+
+@media only screen and (max-resolution:150dpi) and (min-aspect-ratio: 1/1), only screen and (-webkit-max-device-pixel-ratio:1.51) and (min-aspect-ratio: 1/1), only screen and (-o-min-device-pixel-ratio:0/1) and (min-aspect-ratio: 1/1) {
+    .Portfolio div.data {
+        display: flex;
+        padding:0;
+        position:relative;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+        width: 100vw;
+        overflow: visible;
+    }
+    .contentPortfolioPreviews div.data,
+    .contentPortfolioGallery div.data {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+    }
+    .contentPortfolioPreviews div.data {
+        min-height: 100vh;
+    }
+
+    .contentPortfolioPreviews, .contentPortfolioGallery {
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: auto;
+        width: 100%;
+    }
+    .contentPortfolioPreviews div.data h1, 
+    .contentPortfolioPreviews div.data h2, 
+    .contentPortfolioPreviews div.data div.previews {
+        color: rgb(40,40,40);
+        display: flex;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        padding:0;
+        margin:0;
+        border:0;
+    }
+    
+    .contentPortfolioPreviews div.data h1 {
+        height: 20vh;
+        text-shadow: 0.2vh 0 0.1vh rgba(40,40,40,0.2);
+    }
+    .contentPortfolioPreviews div.data h2 {
+        height: 15vh;
+    }
+    
+    .contentPortfolioPreviews div.data div.previews {
+        height: auto;
+        min-height: 65vh;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 3vh;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview {
+        display: block;
+        position: relative;
+        height: 20vw;
+        width: 20vw;
+        top:0;
+        left:0;
+
+        margin:2vh;
+        border:0;
+        overflow: hidden;
+        border-radius: 1vh;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div {
+        padding:0;
+        margin:0;
+        border:0;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.image {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left:0;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    .contentPortfolioPreviews div.data div.previews div.preview div.layer {
+        display: flex;
+        position: relative;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(40,40,40,0.2);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contentPortfolioPreviews div.data div.previews div.preview div.layer button {
+        display:  flex;
+        position: relative;
+        top: 0;
+        left:0;
+        height: 20%;
+        width: 40%;
+
+        justify-content: center;
+        align-items: center;
+
+        color: rgb(224,224,224);
+        background-color: rgb(154,37,52);
+        border-radius: 1vh;
+        text-align: center;
+
+        margin:0;
+        border:0;
+        padding: 0 1vw;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.layer button:hover {
+        background-color: rgb(189,46,64);
+    }
+
+    .contentPortfolioGallery div.data div.goBackPreviews {
+        position: fixed;
+        display: flex;
+        top: 4.75vh;
+        left:17.5vh;
+        height: 8vh;
+        width: 8vh;
+        border-radius: 4vh;
+        padding:0;
+        margin:0;
+        border:1px solid rgba(224,224,224, 0.1);
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        z-index: 6;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews:hover {
+        background-color: rgba(224,224,224,0.15);
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div {
+        display: flex;
+        height: 8vh;
+        position: relative;
+        top:0;
+        left:0;
+        padding:0;
+        margin:0;
+        border:0;
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        background-color: transparent;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div.arrow {
+        width: 8vh;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: auto 2vh;
+        background-image: url('../../images/logo_studio/items/leftarrow.png');
+     }
+    .contentPortfolioGallery div.data div.goBackPreviews div.text {
+        width: 20vh;
+
+        color: rgb(224,224,224)
+    }
+    .contentPortfolioGallery div.data div.gallery {
+        display: flex;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        top:0;
+        left:0;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider {
+        display: flex;
+        position: relative;
+        height: 80vh;
+        width: 100vw;
+        top:0;
+        left:0;
+        
+        padding:0;
+        margin:0;
+        border:0;
+        
+        flex-direction: row;
+        flex-wrap: nowrap;
+        
+        overflow: hidden;
+        background-color: rgb(30,30,30);
+        cursor: url('../../images/cursors/white_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.images {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100vw;
+        top:0;
+        left:0;
+
+        padding:0;
+        margin:0;
+        border:0;
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        overflow: visible;
+        background-color: rgb(30,30,30);
+        cursor: url('../../images/cursors/white_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.images div.sliderImage {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100vw;
+        top:0;
+        left:0;
+        
+        padding:0;
+        margin:0;
+        border:0;
+        background-color: transparent;
+        background-size: contain;
+        background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        
+        -webkit-flex-shrink: 0;
+        -webkit-flex-grow: 0;
+        flex-shrink: 0;
+        flex-grow: 0;
+        z-index:4;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls {
+        display: block;
+        position:absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        padding:0;
+        margin:0;
+        border:0;
+        
+        background-color: transparent;
+        z-index: 5;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goLeft,
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goRight {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 10vw;
+        top:0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: auto 2vw;
+
+    }
+
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goLeft:hover,
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goRight:hover {
+        background-color: rgba(224,224,224,0.1);
+    }
+
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goLeft {
+        left:0;
+        background-image: url('../../images/logo_studio/items/leftarrow.png')
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goRight {
+        right:0;
+        background-image: url('../../images/logo_studio/items/rightarrow.png')
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.counter {
+        display: block;
+        position:absolute;
+        bottom:3vh;
+        left: 45vw;
+        height: 5vh;
+        width: 10vw;
+        padding:0;
+        margin:0;
+        border:0;
+
+        background-color: rgb(40,40,40);
+        border-radius: 2.5vh;
+        color: rgb(224,224,224);
+        text-align:center;
+        line-height: 5vh;
+
+    }
+    .contentPortfolioGallery div.data div.gallery div.didascalia {
+        display: block;
+        position: relative;
+        height: 20vh;
+        width: 100vw;
+        top:0;
+        left:0;
+        padding: 0;
+        margin:0;
+        border:0;
+
+
+        background-color: rgb(224,224,224);
+        cursor: url('../../images/cursors/black_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.didascalia p {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        color: rgb(40,40,40);
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100), only screen and (max-aspect-ratio: 1/1) {
+    .Portfolio {
+        overflow:hidden;
+    }
+    article.contentPortfolioPreviews, article.contentPortfolioGallery {
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 100%;
+        width: 50%;
+    }
+
+    .Portfolio div.data {
+        display: flex;
+        padding:0;
+        position:relative;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+        width: 200%;
+        overflow: visible;
+    }
+    .contentPortfolioPreviews div.data,
+    .contentPortfolioGallery div.data {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .contentPortfolioPreviews div.data {
+        padding: 0;
+        height: auto;
+    }
+
+    .contentPortfolioPreviews div.data h1,
+    .contentPortfolioPreviews div.data h2,
+    .contentPortfolioPreviews div.data div.previews {
+        color: rgb(40,40,40);
+        display: flex;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        padding:0;
+        margin:0;
+        margin-bottom: 3vh;
+        border:0;
+        box-sizing: border-box;
+    }
+
+    .contentPortfolioPreviews div.data h1,
+    .contentPortfolioPreviews div.data h2 {
+        height: 15%;
+    }
+    .contentPortfolioPreviews div.data h1 {
+        padding-top: 5vh;
+    }
+    .contentPortfolioPreviews div.data h2 {
+        padding-bottom: 5vh;
+    }
+
+    .contentPortfolioPreviews div.data div.previews {
+        height: auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview {
+        display: flex;
+        position: relative;
+        top:0;
+        left:0;
+
+        border:0;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        -webkit-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div {
+        padding:0;
+        margin:0;
+        border:0;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.image {
+        display: block;
+        position: relative;
+        top:0;
+        left:0;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: scroll;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.layer {
+        display: none;
+    }
+
+    .contentPortfolioGallery div.data div.goBackPreviews {
+        position: absolute;
+        display: flex;
+        top: 3vh;
+        left: 3vh;
+        padding:0;
+        margin:0;
+        border:2px solid rgb(224,224,224);
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        z-index: 6;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div.arrow {
+        display: block;
+        height: 7vh;
+        width: 7vh;
+        position: relative;
+        top:0;
+        left:0;
+        padding:0;
+        margin:0;
+
+        border:0;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: auto 3vh;
+        background-image: url('../../images/logo_studio/items/leftarrow.png');
+        background-color: transparent;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div.text {
+        display: none;
+    }
+    .contentPortfolioGallery div.data div.gallery {
+        display: flex;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        top:0;
+        left:0;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider {
+        display: flex;
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        top:0;
+        left:0;
+
+        padding:0;
+        margin:0;
+        border:0;
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        overflow: hidden;
+        background-color: rgb(30,30,30);
+        cursor: url('../../images/cursors/white_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.images {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left:0;
+
+        padding:0;
+        margin:0;
+        border:0;
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        overflow: visible;
+        background-color: rgb(30,30,30);
+        cursor: url('../../images/cursors/white_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.images div.sliderImage {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left:0;
+
+        padding:0;
+        margin:0;
+        border:0;
+        background-color: transparent;
+        background-size: contain;
+        background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+
+        -webkit-flex-shrink: 0;
+        -webkit-flex-grow: 0;
+        flex-shrink: 0;
+        flex-grow: 0;
+        z-index:4;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls {
+        display: block;
+        position:absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        padding:0;
+        margin:0;
+        border:0;
+
+        background-color: transparent;
+        z-index: 5;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goLeft,
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goRight {
+        display: block;
+        position: absolute;
+        height: 8vh;
+        width: 15%;
+        bottom: 3vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: auto 3vh;
+
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goLeft {
+        left:2.5%;
+        background-image: url('../../images/logo_studio/items/leftarrow.png')
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.goRight {
+        right:2.5%;
+        background-image: url('../../images/logo_studio/items/rightarrow.png')
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.counter {
+        display: block;
+        position:absolute;
+        padding:0;
+        margin:0;
+        border:0;
+
+        background-color: rgba(40,40,40, 0.7);
+        color: rgb(224,224,224);
+        text-align:center;
+        
+        bottom:3vh;
+        height: 8vh;
+
+        line-height: 8vh;
+
+    }
+    .contentPortfolioGallery div.data div.gallery div.didascalia {
+        display: block;
+        position: relative;
+        height: 20vh;
+        width: 100vw;
+        top:0;
+        left:0;
+        padding: 0;
+        margin:0;
+        border:0;
+
+
+        background-color: rgb(224,224,224);
+        cursor: url('../../images/cursors/black_contrast.cur'), auto;
+    }
+    .contentPortfolioGallery div.data div.gallery div.didascalia p {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        color: rgb(40,40,40);
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: landscape), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: landscape), only screen and (max-aspect-ratio: 1/1) and (orientation: landscape) {
+    .contentPortfolioPreviews div.data div.previews div.preview {
+        height: 30vh;
+        width: 30vh;
+        margin: 2vw;
+        border-radius: 3vh;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.image {
+        height: 30vh;
+        width: 30vh;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.counter {
+        left: 40%;
+        width: 20%;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews {
+        height: 7vw;
+        width: 7vw;
+        border-radius: 3.5vw;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div.arrow {
+        width: 7vw;
+        height: 7vw;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: auto 2vw;
+        background-image: url('../../images/logo_studio/items/leftarrow.png');
+    }
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: portrait), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: portrait), only screen and (max-aspect-ratio: 1/1) and (orientation: portrait) {
+    .contentPortfolioPreviews div.data div.previews div.preview {
+        height: 30vw;
+        width: 30vw;
+        margin: 2vh;
+        border-radius: 3vw;
+    }
+    .contentPortfolioPreviews div.data div.previews div.preview div.image {
+        height: 30vw;
+        width: 30vw;
+    }
+    .contentPortfolioGallery div.data div.gallery div.slider div.controls div.counter {
+        left: 20%;
+        width: 60%;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews {
+        height: 7vh;
+        width: 7vh;
+        border-radius: 3.5vh;
+    }
+    .contentPortfolioGallery div.data div.goBackPreviews div.arrow {
+        width: 7vh;
+        height: 7vh;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: auto 2vh;
+        background-image: url('../../images/logo_studio/items/leftarrow.png');
+    }
+}

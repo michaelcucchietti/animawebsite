@@ -1,0 +1,114 @@
+h1, h2, p, span, div, table, a, button, input {
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0;
+    color: rgb(224,224,224);
+    text-transform: uppercase;
+    text-shadow: 0.1vh 0 1vh rgba(30,30,30,0.5);
+    margin:0;
+}
+h2, h3 {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0;
+    color: rgb(224,224,224);
+    text-shadow: 0.1vh 0 0.5vh rgba(30,30,30,0.3);
+    margin:0;
+    font-weight: normal;
+    line-height: 1.6em;
+}
+p {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0;
+    color: rgb(224,224,224);
+    text-shadow: 0.1vh 0 0.5vh rgba(30,30,30,0.3);
+    line-height: 1.6em;
+    margin:0;
+}
+span {
+    line-height: 1.6em;
+    font-size: inherit;
+}
+
+
+@media only screen and (max-resolution:150dpi) and (min-aspect-ratio: 1/1), only screen and (-webkit-max-device-pixel-ratio:1.51) and (min-aspect-ratio: 1/1), only screen and (-o-min-device-pixel-ratio:0/1) and (min-aspect-ratio: 1/1){
+    h1 {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+        margin-bottom: 4vh;
+        font-size: 9vh;
+    }
+    h2, button {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        width: 60vw;
+        font-size: 3vh;
+    }
+    h3 {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        font-size: 5.5vh;
+    }
+    p {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        width: 60vw;
+    }
+    p, div, table, button, a, span {
+        font-size: 2.5vh;
+    }
+    /*button {
+        font-size: 2.2vh;
+    }
+    a {
+        font-size: 2.2vh;
+    }*/
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: portrait), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: portrait), only screen and (max-aspect-ratio: 1/1) and (orientation: portrait) {
+    h1 {
+        font-size: 9vw;
+    }
+    h2 {
+        font-size: 5vw;
+    }
+	a, div, table, button, p, span {
+		font-size: 4.5vw;
+	}
+    h3 {
+        font-size: 7.5vw;
+    }
+    /*p {
+        font-size: 3.2vw;
+    }*/
+}
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51) and (orientation: landscape), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100) and (orientation: landscape), only screen and (max-aspect-ratio: 1/1) and (orientation: landscape) {
+    h1 {
+        font-size: 9vh;
+    }
+    h2 {
+        font-size: 5vh;
+    }
+    h3 {
+        font-size: 7.5vh;
+    }
+    p, div, table, a, button, span {
+        font-size: 3.2vh;
+    }
+}

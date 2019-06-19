@@ -1,0 +1,86 @@
+.displayFlexSmartphone {
+
+}
+.displayBlockSmartphone {
+
+}
+.displayTableSmartphone {
+
+}
+.displayNoneSmartphone {
+
+}
+.displayFlexDesktop {
+
+}
+.displayBlockDesktop {
+
+}
+.displayTableDesktop {
+
+}
+.displayNoneDesktop {
+
+}
+
+.displayNone {
+    display: none !important;
+}
+
+
+/* DESKTOP */
+@media only screen and (max-resolution:150dpi) and (min-aspect-ratio: 1/1), only screen and (-webkit-max-device-pixel-ratio:1.51) and (min-aspect-ratio: 1/1), only screen and (-o-min-device-pixel-ratio:0/1) and (min-aspect-ratio: 1/1){
+    .displayFlexSmartphone {
+        display: none !important;
+    }
+    .displayBlockSmartphone {
+        display: none !important;
+    }
+    .displayTableSmartphone {
+        display: none !important;
+    }
+    .displayNoneSmartphone {
+
+    }
+    .displayFlexDesktop {
+        display: flex !important;
+    }
+    .displayBlockDesktop {
+        display: block !important;
+    }
+    .displayTableDesktop {
+        display: table !important;
+    }
+    .displayNoneDesktop {
+        display: none !important;
+    }
+}
+
+
+/*SMARTPHONE */
+@media only screen and (min-resolution:151dpi) and (-webkit-min-device-pixel-ratio:1.51), only screen and (min-resolution:151dpi) and (-o-min-device-pixel-ratio:151/100), only screen and (max-aspect-ratio: 1/1) {
+    .displayFlexSmartphone {
+        display: flex !important;
+    }
+    .displayBlockSmartphone {
+        display: block !important;
+    }
+    .displayTableSmartphone {
+        display: table !important;
+    }
+    .displayNoneSmartphone {
+        display: none !important;
+    }
+    .displayFlexDesktop {
+        display: none !important;
+    }
+    .displayBlockDesktop {
+        display: none !important;
+    }
+    .displayTableDesktop {
+        display: none !important;
+    }
+    .displayNoneDesktop {
+
+    }
+}
