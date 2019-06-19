@@ -790,10 +790,19 @@ var AnimaLoader = AnimaLoader || {
     },
     // creare showProgress con startLoadingVideo e migliorare hide progress inserendo stopLoaingVideo
     loadBase: function() {
+        AnimaLoader.showProgress();
+
         AnimaLoader.initTestResponsive();
         AnimaSections.initialize();
         AnimaMenu.initialize();                    // inizializza il menu
         AnimaSections.bindScrollbar();
+
+        var body = document.body;
+        body.addEventListener('preloaded', function() {
+            AnimaLoader.hideProgress();
+        });
+        AnimaPreload.preloadElement(body);
+
     },
     loadHome: function() {
         AnimaLoader.loadBase();

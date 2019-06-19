@@ -27,6 +27,11 @@
 
 </head>
 <body onload="AnimaLoader.loadContacts()">
+<div class="DefaultContainer LoadingBlock" id="progress">
+    <video id="loadingvideo" loop autoplay muted="muted">
+        <source src="../videos/loading.mp4" type="video/mp4">
+    </video>
+</div>
 <div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
     <a class="MenuButton"></a>
     <nav class="MenuEntries">
@@ -86,7 +91,7 @@
 </div>
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
-        <article class="ContentBlock contentContacts" animasource="images/contacts/contact.jpg">
+        <article class="ContentBlock contentContacts" animasource="../images/contacts/contact.jpg">
             <div class="data dataCenterCenter">
                 <div class="headerdiv">
                     <p>
@@ -97,15 +102,15 @@
                 <div class="middlediv">
                     <div class="container">
                         <div class="iconbox">
-                            <div class="icon email" animasource="images/contacts/items/email.png"></div>
+                            <div class="icon email" animasource="../images/contacts/items/email.png"></div>
                             <div class="caption"><p>info@inside-anima.com</p></div>
                         </div>
                         <div class="iconbox">
-                            <div class="icon whatsapp" animasource="images/contacts/items/whatsapp.png"></div>
+                            <div class="icon whatsapp" animasource="../images/contacts/items/whatsapp.png"></div>
                             <div class="caption"><p>391 4783052</p></div>
                         </div>
                         <a class="iconbox linkbox" href="https://www.instagram.com/logostudio.anima/?hl=it">
-                            <div class="icon instagram" animasource="images/contacts/items/instagram-circle.png;images/contacts/items/instagram-icon.png">
+                            <div class="icon instagram" animasource="../images/contacts/items/instagram-circle.png;images/contacts/items/instagram-icon.png">
                                 <div class="circle" onmouseenter="(new Animations.AnimationRotate(this, 0.5, AnimationCurves.exponential, 'z', 360)).start()" onmouseleave="(new Animations.AnimationRotate(this, 0.5, AnimationCurves.exponential, 'z', -360)).start()"></div>
                             </div>
                             <div class="caption"><p>logostudio.anima</p></div>

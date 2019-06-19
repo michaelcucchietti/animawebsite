@@ -29,6 +29,11 @@
 
 </head>
 <body onload="AnimaLoader.loadLogoStudio()">
+<div class="DefaultContainer LoadingBlock" id="progress">
+    <video id="loadingvideo" loop autoplay muted="muted">
+        <source src="../videos/loading.mp4" type="video/mp4">
+    </video>
+</div>
 <div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
     <a class="MenuButton"></a>
     <nav class="MenuEntries">
@@ -88,7 +93,7 @@
 </div>
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
-        <article class="ContentBlock contentLogoStudio" animasource="images/logo_studio/011.jpg" >
+        <article class="ContentBlock contentLogoStudio" animasource="../images/logo_studio/011.jpg" >
         </article>
         <article class="ContentBlock contentAntracite contentLogoStudioDetails">
             <div class="data dataTopCenter">
@@ -135,8 +140,8 @@
             </div>
         </article>
         <div class="separator"></div>
-        <article class="ContentBlock contentEmotions" animasource="images/logo_studio/012.jpg" >
-            <div class="dataBottomCenter data" animasource="images/logo_studio/items/emotions_overlay.png" >
+        <article class="ContentBlock contentEmotions" animasource="../images/logo_studio/012.jpg" >
+            <div class="dataBottomCenter data" animasource="../images/logo_studio/items/emotions_overlay.png" >
                 <h1>Emotions.</h1>
                 <h2>
                     Presentarsi &egrave; l'inizio di ogni storia d'amore, ma anche di un rapporto professionale o commerciale.
@@ -144,7 +149,7 @@
                 </h2>
             </div>
         </article>
-        <article class="ContentBlock contentPalette displayFlexDesktop contentStats" animasource="images/logo_studio/015.jpg" >
+        <article class="ContentBlock contentPalette displayFlexDesktop contentStats" animasource="../images/logo_studio/015.jpg" >
             <div class="galleryControl galleryControlPrevious displayNone" onclick="AnimaGallery.previousGalleryImage()" id="gallery_previous"><img src="../images/logo_studio/items/leftarrow.png" alt="go left" /></div>
             <div class="contentDataGallery" id="statsGallery">
                 <div class="dataGalleryContainer first">
@@ -153,17 +158,17 @@
                         <div class="content dataCenterLeft">
                             <div class="statElements">
                                 <div class="statElement">
-                                    <div class="icon identita" animasource="images/logo_studio/items/identita.png" ></div>
+                                    <div class="icon identita" animasource="../images/logo_studio/items/identita.png" ></div>
                                     <div class="details"><p>Un logo che rispecchia l'essenza della tua attivit&agrave; favorisce idee di chiarezza, trasparenza e continuit&agrave;; in questo modo sar&agrave; pi&ugrave; semplice instaurare un rapporto di fiducia con i clienti.</p></div>
                                     <h2>IDENTIT&Agrave;</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon ricordo" animasource="images/logo_studio/items/ricordo.png" ></div>
+                                    <div class="icon ricordo" animasource="../images/logo_studio/items/ricordo.png" ></div>
                                     <div class="details"><p>Un logo che si ricorda &egrave; un logo capace di vincere anche il tempo, restando attuale e, anzi, aumentando la propria efficacia.</p></div>
                                     <h2>RICORDO</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon messaggio" animasource="images/logo_studio/items/messaggio.png" ></div>
+                                    <div class="icon messaggio" animasource="../images/logo_studio/items/messaggio.png" ></div>
                                     <div class="details"><p>Il tuo logo, per funzionare, deve riuscire a parlare alle persone, attraverso emozioni, sensazioni e pensieri trasmessi visivamente.</p></div>
                                     <h2>MESSAGGIO</h2>
                                 </div>
@@ -177,15 +182,15 @@
                         <div class="content dataCenterLeft">
                             <div class="statElements">
                                 <div class="statElement">
-                                    <div class="icon novantatrepercento" animasource="images/logo_studio/items/001.png" ></div>
+                                    <div class="icon novantatrepercento" animasource="../images/logo_studio/items/001.png" ></div>
                                     <h2 class="light">Parte visiva della comunicazione umana</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon sessantak" animasource="images/logo_studio/items/002.png" ></div>
+                                    <div class="icon sessantak" animasource="../images/logo_studio/items/002.png" ></div>
                                     <h2 class="light">Immagini elaborate dal cervello nel tempo utile per comprendere un testo</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon zerovirgolauno" animasource="images/logo_studio/items/003.png" ></div>
+                                    <div class="icon zerovirgolauno" animasource="../images/logo_studio/items/003.png" ></div>
                                     <h2 class="light">Secondi impiegati dal cervello per elaborare un'immagine</h2>
                                 </div>
                             </div>
@@ -198,17 +203,17 @@
                         <div class="content dataCenterLeft">
                             <div class="statElements">
                                 <div class="statElement">
-                                    <div class="icon unicita" animasource="images/logo_studio/items/unicita.png" ></div>
+                                    <div class="icon unicita" animasource="../images/logo_studio/items/unicita.png" ></div>
                                     <div class="details"><p>Rendere il tuo logo unico nel suo genere &egrave; la chiave giusta per distiguersi e farsi ricordare.</p></div>
                                     <h2>UNICIT&Agrave;</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon semplicita" animasource="images/logo_studio/items/semplicita.png" ></div>
+                                    <div class="icon semplicita" animasource="../images/logo_studio/items/semplicita.png" ></div>
                                     <div class="details"><p>Un logo semplice &egrave; immediatamente comprensibile all'occhio umano e questo contribuisce a renderlo accattivante e piacevole alla vista.</p></div>
                                     <h2>SEMPLICIT&Agrave;</h2>
                                 </div>
                                 <div class="statElement">
-                                    <div class="icon scalabilita" animasource="images/logo_studio/items/scalabilita.png" ></div>
+                                    <div class="icon scalabilita" animasource="../images/logo_studio/items/scalabilita.png" ></div>
                                     <div class="details"><p>Lo sviluppo in grafica vettoriale permette al tuo logo di adattarsi a qualsiasi dimensione di utilizzo, mantenendo inalterate chiarezza e qualit&agrave;.</p></div>
                                     <h2>SCALABILIT&Agrave;</h2>
                                 </div>
@@ -219,7 +224,7 @@
             </div>
             <div class="galleryControl galleryControlNext" onclick="AnimaGallery.nextGalleryImage()" id="gallery_next"><img src="../images/logo_studio/items/rightarrow.png" alt="go left" />;</div>
         </article>
-        <article class="ContentBlock contentPalette displayFlexSmartphone contentStats" animasource="images/logo_studio/015.jpg" >
+        <article class="ContentBlock contentPalette displayFlexSmartphone contentStats" animasource="../images/logo_studio/015.jpg" >
             <div class="contentDataGallery">
                 <div class="dataGalleryContainer second">
                     <div class="data dataCenterLeft">
@@ -245,7 +250,7 @@
             </div>
         </article>
         <div class="separator"></div>
-        <article class="ContentBlock contentPalette contentStrategy" animasource="images/logo_studio/013.jpg" >
+        <article class="ContentBlock contentPalette contentStrategy" animasource="../images/logo_studio/013.jpg" >
             <div class="data dataCenterCenter">
                 <h1 class="dataCenterCenter">Strategy.</h1>
                 <h2 class="dataCenterCenter">
@@ -294,7 +299,7 @@
             </div>
         </article>
         <div class="separator"></div>
-        <article class="ContentBlock contentSteps" animasource="images/logo_studio/014.jpg" >
+        <article class="ContentBlock contentSteps" animasource="../images/logo_studio/014.jpg" >
             <div class="surfer displayFlexDesktop">
                 <div class="detailsurfer" slidetime="15000">
                     <div class="contentContainer">
@@ -348,7 +353,7 @@
             </div>
         </article>
         <div class="separator"></div>
-        <article class="ContentBlock contentFindMore" animasource="images/logo_studio/016.jpg" >
+        <article class="ContentBlock contentFindMore" animasource="../images/logo_studio/016.jpg" >
             <div class="data dataCenterLeft">
                 <h1 class="dataCenterLeft">Find More.</h1>
                 <div class="dataCenterCenter">

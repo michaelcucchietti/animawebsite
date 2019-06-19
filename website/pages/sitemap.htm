@@ -29,6 +29,11 @@
 
 </head>
 <body onload="AnimaLoader.loadSitemap()">
+<div class="DefaultContainer LoadingBlock" id="progress">
+    <video id="loadingvideo" loop autoplay muted="muted">
+        <source src="../videos/loading.mp4" type="video/mp4">
+    </video>
+</div>
 <div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
     <a class="MenuButton"></a>
     <nav class="MenuEntries">
@@ -92,15 +97,15 @@
             <div class="data">
                 <div class="controls">
                     <div class="control" id="sitemapBackButton">
-                        <div class="icon back" animasource="images/sitemap/leftArrow.png"></div>
+                        <div class="icon back" animasource="../images/sitemap/leftArrow.png"></div>
                         <span class="text">Indietro</span>
                     </div>
                     <div class="control" id="sitemapParentButton">
-                        <div class="icon parent" animasource="images/sitemap/upArrow.png"></div>
+                        <div class="icon parent" animasource="../images/sitemap/upArrow.png"></div>
                         <span class="text">Livello superiore</span>
                     </div>
                     <div class="control" id="sitemapLinkButton">
-                        <div class="icon link" animasource="images/sitemap/link.png"></div>
+                        <div class="icon link" animasource="../images/sitemap/link.png"></div>
                         <span class="text">Apri link</span>
                     </div>
                 </div>

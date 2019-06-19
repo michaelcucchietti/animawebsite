@@ -29,6 +29,11 @@
 
 </head>
 <body onload="AnimaLoader.loadDigitals()">
+<div class="DefaultContainer LoadingBlock" id="progress">
+    <video id="loadingvideo" loop autoplay muted="muted">
+        <source src="../videos/loading.mp4" type="video/mp4">
+    </video>
+</div>
 <div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
     <a class="MenuButton"></a>
     <nav class="MenuEntries">
@@ -88,7 +93,7 @@
 </div>
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
-        <article class="ContentBlock contentDigitalCommunication" animasource="images/digital_communication/111.jpg">
+        <article class="ContentBlock contentDigitalCommunication" animasource="../images/digital_communication/111.jpg">
         </article>
         <article class="ContentBlock contentDigitalCommunicationDetails contentAntracite">
             <div class="data dataTopCenter">
@@ -133,7 +138,7 @@
             </div>
         </article>
         <div class="separator"></div>
-        <article class="ContentBlock contentWildWeb" animasource="images/digital_communication/112.jpg">
+        <article class="ContentBlock contentWildWeb" animasource="../images/digital_communication/112.jpg">
             <div class="data dataCenterCenter">
                 <h1 class="dataBottomCenter">the wild web.</h1>
                 <h2 class="dataTopCenter">
