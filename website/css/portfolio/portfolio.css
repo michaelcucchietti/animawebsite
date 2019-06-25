@@ -579,6 +579,7 @@
     }
     .contentPortfolioPreviews div.data h1 {
         padding-top: 5vh;
+        text-shadow: none;
     }
     .contentPortfolioPreviews div.data h2 {
         padding-bottom: 5vh;
@@ -788,16 +789,18 @@
 
     }
     .contentPortfolioGallery div.data div.gallery div.didascalia {
-        display: block;
+        display: flex;
         position: relative;
         height: 20vh;
-        width: 100vw;
+        width: 90vw;
         top:0;
         left:0;
         padding: 0;
         margin:0;
         border:0;
-
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
 
         background-color: rgb(224,224,224);
         cursor: url('../../images/cursors/black_contrast.cur'), auto;
@@ -805,7 +808,7 @@
     .contentPortfolioGallery div.data div.gallery div.didascalia p {
         display: flex;
         height: 100%;
-        width: 100%;
+        width: 85%;
         color: rgb(40,40,40);
 
         flex-direction: row;
