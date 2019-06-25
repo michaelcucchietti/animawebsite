@@ -666,9 +666,12 @@ var AnimaLoader = AnimaLoader || {
             if(detail != null && typeof detail !== 'undefined' && detail.length > 0) {
                 detail = detail[0];
                 element.detailItem = detail;
-                element.onclick = function(ev) {
-                    if(ev.button === 0)
+                element.onmouseenter = function(ev) {
+                    //if(ev.button === 0)
                         AnimaMisc.statElementClick(this.detailItem);
+                };
+                element.onmouseleave = function() {
+                    AnimaMisc.statElementClick(this.detailItem);
                 }
             }
 
