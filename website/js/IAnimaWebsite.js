@@ -811,6 +811,7 @@ var AnimaLoader = AnimaLoader || {
         AnimaLoader.loadBase();
         AnimaLoader.loadArrowAboutAnimation();
         AnimaMisc.initDescriptors();
+        AnimaNews.loadmininews();
     },
     loadDigitals: function() {
         AnimaLoader.loadBase();

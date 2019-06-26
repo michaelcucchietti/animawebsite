@@ -167,6 +167,17 @@ Object.prototype.animateScrollToTop = function(animationTime, animationCurve, sc
         return;
     (this.animationScrollToTop(animationTime, animationCurve, scrollTopFinalValue)).start();
 };
+Object.prototype.animationOpacity = function(animationTime, animationCurve, opacityPercent) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    return (new Animations.AnimationOpacity(this, animationTime, animationCurve, opacityPercent));
+
+};
+Object.prototype.animateOpacity = function(animationTime, animationCurve, opacityPercent) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    (this.animationOpacity(animationTime, animationCurve, opacityPercent)).start();
+};
 
 /* Global Variable declaration */
 var number_of_oscillation = 2;
