@@ -22,7 +22,7 @@ article.articles div.data div.news_articles {
     width: 80%;
 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: space-between;
     flex-grow: 0;
     flex-shrink: 0;
@@ -50,7 +50,7 @@ article.articles div.data div.news_articles a.news_article {
     border: 0.1vh solid rgba(100,100,100,0.4);
     border-radius: 1vh;
     padding: 3vh;
-    margin: 0 0 5vh;
+    margin: 2.5vh;
     box-sizing: border-box;
     text-decoration: none;
 }
