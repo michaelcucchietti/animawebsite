@@ -22,7 +22,7 @@
         }
 
         public function getHTML() : string {
-            return "<a class=\"news_article\" href=\"?id=\"".$this->getID().">".
+            return "<a class=\"news_article\" href=\"?id=".$this->getID()."\">".
                 "<p class=\"article_title\">".$this->getTitle()."</p>".
                 "<span class='article_description'>".$this->getDescrizione()."</span>".
                 "</a>";
@@ -42,7 +42,6 @@
 
         public function getHTML() : string {
             $html = "<div class=\"news_articles\">";
-            echo count($this->articles);
             foreach($this->articles as $key => $value) {
                 $html .= $value->getHTML();
             }

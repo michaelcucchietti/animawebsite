@@ -1,13 +1,17 @@
 article.articles {
     height: auto;
     min-height: 100vh;
-    background-color: rgb(40,40,40);
+    background-color: rgb(240,240,240);
 }
 
 article.articles div.data {
     position: relative;
     height: auto;
+    min-height: 100vh;
     top:0;
+
+    align-items: center;
+    justify-content: center;
 }
 article.articles div.data div.news_articles {
     display: flex;
@@ -15,11 +19,11 @@ article.articles div.data div.news_articles {
     top:0;
     left:0;
     height: 100%;
-    width: 100%;
+    width: 80%;
 
-    flex-direction: column;
-    justify-content: center;
-    align-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
     flex-grow: 0;
     flex-shrink: 0;
 
@@ -27,6 +31,7 @@ article.articles div.data div.news_articles {
     border:0;
     padding: 5vh;
     margin: 0;
+    flex-wrap: wrap;
 }
 article.articles div.data div.news_articles a.news_article {
     display: flex;
@@ -34,7 +39,7 @@ article.articles div.data div.news_articles a.news_article {
     top:0;
     left:0;
     height: 25vh;
-    width: 100%;
+    width: 45%;
 
     flex-direction: column;
     justify-content: flex-start;
@@ -42,15 +47,17 @@ article.articles div.data div.news_articles a.news_article {
     flex-grow: 0;
     flex-shrink: 0;
 
-    border: 0.1vh solid rgba(100,100,100,0.2);
+    border: 0.1vh solid rgba(100,100,100,0.4);
     border-radius: 1vh;
     padding: 3vh;
-    margin: 0 0 1vh;
+    margin: 0 0 5vh;
     box-sizing: border-box;
     text-decoration: none;
 }
 article.articles div.data div.news_articles a.news_article:hover {
     cursor: pointer;
+    border: 0.1vh solid rgba(46,190,186 ,1);
+    background-color: rgba(46,190,186, 0.04);
 }
 article.articles div.data div.news_articles a.news_article p.article_title {
     display: flex;
@@ -68,7 +75,7 @@ article.articles div.data div.news_articles a.news_article p.article_title {
 
     margin: 0 0 1vh;
     box-sizing: border-box;
-    color: rgb(224,224,224);
+    color: rgb(40, 40, 40);
 }
 article.articles div.data div.news_articles a.news_article span.article_description {
     display: flex;
@@ -86,7 +93,7 @@ article.articles div.data div.news_articles a.news_article span.article_descript
 
     margin: 0 0 1vh;
     box-sizing: border-box;
-    color: rgba(224,224,224,0.6);
+    color: rgba(40,40,40,0.6);
 }
 
 
