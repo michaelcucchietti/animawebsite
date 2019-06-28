@@ -1,3 +1,3 @@
 <?php
     require "MyTestConnection.php";
-    $connection->connect();
+    //$connection->connect();

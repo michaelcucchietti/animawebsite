@@ -3,7 +3,6 @@ article.articles {
     min-height: 100vh;
     background-color: rgb(240,240,240);
 }
-
 article.articles div.data {
     position: relative;
     height: auto;
@@ -98,3 +97,128 @@ article.articles div.data div.news_articles a.news_article span.article_descript
 
 
 
+article.newsarticle {
+    height: auto;
+    min-height: 100vh;
+    background-color: rgb(240,240,240);
+}
+article.newsarticle div.data {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    top:0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 20vh 0 0;
+}
+article.newsarticle div.data div.news_article_inside {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-sizing: border-box;
+    border:0;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+
+    color: rgb(40,40,40);
+}
+article.newsarticle div.data div.news_article_inside h1.title {
+    color: rgb(30,30,30);
+    text-align: left;
+    font-weight: bolder;
+    margin-bottom: 10vh;
+    width:60%;
+}
+
+article.newsarticle div.data div.news_article_inside div.testo {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: auto;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+article.newsarticle div.data div.news_article_inside div.testofinale {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: 70vh;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15vh;
+}
+
+article.newsarticle div.data div.news_article_inside div.testo span, article.newsarticle div.data div.news_article_inside div.testofinale span {
+    display: block;
+    position: relative;
+    top:0;
+    left: 0;
+    height: auto;
+    white-space: normal;
+    width: 60%;
+    min-height: 10vh;
+}
+
+
+article.newsarticle div.data div.news_article_inside div.article_image {
+    display: flex;
+    position: relative;
+    overflow: visible;
+    height: auto;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+    margin: 10vh 0;
+}
+
+article.newsarticle div.data div.news_article_inside div.article_image div.infografica_emozioni_granulare {
+    display: block;
+    height: 60vh;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../images/news/infograficaemozioni/granulare_desktop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+article.newsarticle div.data div.news_article_inside div.article_image div.emozioni_copertina {
+    display: block;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-size: 100% auto;
+    background-image: url('../../images/news/infograficaemozioni/copertina.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+article.newsarticle div.data div.news_article_inside div.article_image div.infografica_emozioni_generale {
+    display: block;
+    height: 30vh;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../images/news/infograficaemozioni/general_desktop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}

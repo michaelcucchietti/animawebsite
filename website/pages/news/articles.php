@@ -33,11 +33,13 @@
 
         public function __construct() {
             global $connection;
+            $connection->connect();
             $results = $connection->query("SELECT id, titolo, descrizione FROM articles order by datacreazione DESC");
             while($row = $results->fetch_assoc()) {
                 $article = new Article($row['id'], $row['titolo'], $row['descrizione']);
                 $this->articles[$row['id']] = $article;
             }
+            $connection->close();
         }
 
         public function getHTML() : string {

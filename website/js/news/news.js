@@ -76,7 +76,7 @@ var AnimaNews = AnimaNews || {
             return;
 
         var articleID = element.getAttribute('anima-article-id');
-        var link = AnimaNews.news_rootLink + 'articleID=' + articleID;
+        var link = AnimaNews.news_rootLink + 'id=' + articleID;
         location.href = link;
     }
 };
