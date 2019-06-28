@@ -6,7 +6,7 @@
 class Connection {
     private $server, $db_name, $username, $password;
     private $conn;
-    private $connected;
+    private $connected = false;
     public function __construct($server, $db_name, $username, $password) {
         $this->server = $server;
         $this->db_name = $db_name;

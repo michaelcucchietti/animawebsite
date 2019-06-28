@@ -97,9 +97,11 @@
         <article class="ContentBlock contentAbout" >
             <div class="newscomponent whiteText" id="mininews">
                 <span class="articleTitle">ultimi articoli</span>
-                <span class="element" anima-article-id="infografica_emozioni">Infografica</span>
-                <span class="element" anima-article-id="fourier">Fourier</span>
-                <span class="element" anima-article-id="animasocial">Anima social</span>
+                <?php
+                    include "news/mininews.php";
+                    $mini = new MiniNews();
+                    echo $mini->getHTML();
+                ?>
             </div>
             <div class="data">
                 <div class="contentAnima"  >
