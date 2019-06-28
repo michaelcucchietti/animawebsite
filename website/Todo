@@ -1,12 +1,7 @@
 TODO
-[x] creare pagina digitals
-[x] creare pagina portfolio
-[x] creare pagina sitemap
-[x] creare pagina coming soon
-[ ] attuare piccole variazioni per googlebot (titolo, meta descrizione, images-alt, etc.)
-[ ]
-[ ]
-[ ]
+[ ] creare pagina news che mostra tutti gli articoli
+[ ] creare pagina news che mostra un articolo leggendo e strutturandolo da database (come è stato progettato)
+[ ] creare pagina 404 e definire reindirizzamento in htaccess
 [ ]
 [ ]
 [ ]
