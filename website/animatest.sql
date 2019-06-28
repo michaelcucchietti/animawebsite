@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 28, 2019 alle 10:48
+-- Creato il: Giu 28, 2019 alle 12:13
 -- Versione del server: 10.1.37-MariaDB
 -- Versione PHP: 7.3.1
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articles` (
   `id` varchar(50) COLLATE utf8_bin NOT NULL,
-  `datacreazione` date NOT NULL,
+  `datacreazione` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `titolo` varchar(100) COLLATE utf8_bin NOT NULL,
   `descrizione` varchar(1024) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -40,7 +40,13 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `datacreazione`, `titolo`, `descrizione`) VALUES
-('primo', '0000-00-00', 'Titolo', 'Ciao a tutti');
+('primo', '2019-06-28 10:58:53', 'Infografica', 'Abbiamo chiesto aagli imprenditori quali emozioni volessero trasmettere ai propri clienti e questo è quello che è uscito!'),
+('quarto', '2019-06-28 11:39:07', 'Ultime news number #2', 'Anima è fantastica!'),
+('quinto', '2019-06-28 11:39:29', 'Ultime news #3', 'Anima è fantastica!'),
+('secondo', '2019-06-28 10:58:19', 'Fourier', 'Articolo che parla della traformata di fourier'),
+('sesto', '2019-06-28 11:39:43', 'Ultime news number #4', 'Anima è fantastica!'),
+('settimo', '2019-06-28 11:39:55', 'Ultime news number #5', 'Anima è fantastica!'),
+('terzo', '2019-06-28 11:05:58', 'Ultime news', 'Anima è fantastica!');
 
 -- --------------------------------------------------------
 
