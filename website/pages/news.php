@@ -52,7 +52,7 @@
         <a class="MenuEntry" link-id="home" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
-                    <div class="media about" ></div>
+                    <div class="media home" ></div>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
         <a class="MenuEntry" link-id="comingsoon" onclick="AnimaSections.open(this)">
             <div class="aligner">
                 <div class="icon">
-                    <div class="media cs" ></div>
+                    <div class="media comingsoon" ></div>
                 </div>
             </div>
 

@@ -67,7 +67,7 @@ var AnimaSections = AnimaSections || {
         };
         this.sections = new this.sectionLinkManager();
 
-        this.sections.addSectionLink('home', 'index.htm');
+        this.sections.addSectionLink('home', 'index.php');
         this.sections.addSectionLink('digitals', 'digitals.htm');
         this.sections.addSectionLink('logostudio', 'logostudio.htm');
         this.sections.addSectionLink('comingsoon', 'comingsoon.htm');

@@ -128,7 +128,7 @@ footer div.anima div.logo {
     }
     
     
-    div.about {
+    div.home {
         background-image: url("../images/menu/about.png");
     }
     div.logostudio {
@@ -137,7 +137,7 @@ footer div.anima div.logo {
     div.digitals {
         background-image: url("../images/menu/digitals.png");
     }
-    div.cs {
+    div.comingsoon {
         background-image: url("../images/menu/cs.png");
     }
     footer div.separatorFooter {

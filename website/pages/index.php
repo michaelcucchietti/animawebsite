@@ -35,58 +35,9 @@
         <source src="../videos/loading.mp4" type="video/mp4">
     </video>
 </div>
-<div class="MenuBar displayFlexSmartphone" id="menuBar_smartphone">
-    <a class="MenuButton"></a>
-    <nav class="MenuEntries">
-        <a class="MenuEntry" link-id="home" onclick="AnimaSections.open(this)">Home</a>
-        <a class="MenuEntry" link-id="digitals" onclick="AnimaSections.open(this)">Digitals</a>
-        <a class="MenuEntry" link-id="logostudio" onclick="AnimaSections.open(this)">Logo Studio</a>
-        <a class="MenuEntry" link-id="comingsoon" onclick="AnimaSections.open(this)">Coming Soon</a>
-    </nav>
-</div>
-<div class="MenuBar displayFlexDesktop" id="menuBar_desktop">
-    <a class="MenuButton">
-        <div class="child"><div class="icon"></div> </div>
-    </a>
-    <nav class="MenuEntries displayNone">
-        <a class="MenuEntry" link-id="home" onclick="AnimaSections.open(this)">
-            <div class="aligner">
-                <div class="icon">
-                    <div class="media about" ></div>
-                </div>
-            </div>
-
-            <div class="text">Home</div>
-        </a>
-        <a class="MenuEntry" link-id="digitals" onclick="AnimaSections.open(this)">
-            <div class="aligner">
-                <div class="icon">
-                    <div class="media digitals" ></div>
-                </div>
-            </div>
-
-            <div class="text">Digitals</div>
-        </a>
-        <a class="MenuEntry" link-id="logostudio" onclick="AnimaSections.open(this)">
-            <div class="aligner">
-                <div class="icon">
-                    <div class="media logostudio" ></div>
-                </div>
-            </div>
-
-            <div class="text">Logo Studio</div>
-        </a>
-        <a class="MenuEntry" link-id="comingsoon" onclick="AnimaSections.open(this)">
-            <div class="aligner">
-                <div class="icon">
-                    <div class="media cs" ></div>
-                </div>
-            </div>
-
-            <div class="text">Coming Soon</div>
-        </a>
-    </nav>
-</div>
+<?php
+    require "menuitems.php";
+?>
 <div class="scrollbar">
     <div class="wider">
         <div class="seeker"></div>
