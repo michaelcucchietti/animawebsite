@@ -68,12 +68,12 @@ var AnimaSections = AnimaSections || {
         this.sections = new this.sectionLinkManager();
 
         this.sections.addSectionLink('home', 'index.php');
-        this.sections.addSectionLink('digitals', 'digitals.htm');
-        this.sections.addSectionLink('logostudio', 'logostudio.htm');
-        this.sections.addSectionLink('comingsoon', 'comingsoon.htm');
-        this.sections.addSectionLink('contacts', 'contacts.htm');
-        this.sections.addSectionLink('portfolio', 'portfolio.htm');
-        this.sections.addSectionLink('sitemap', 'sitemap.htm');
+        this.sections.addSectionLink('digitals', 'digitals.php');
+        this.sections.addSectionLink('logostudio', 'logostudio.php');
+        this.sections.addSectionLink('comingsoon', 'comingsoon.php');
+        this.sections.addSectionLink('contacts', 'contacts.php');
+        this.sections.addSectionLink('portfolio', 'portfolio.php');
+        this.sections.addSectionLink('sitemap', 'sitemap.php');
 
         this.open = function(sectionID) {
             this.sections.openID(sectionID);
