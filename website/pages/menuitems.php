@@ -38,7 +38,7 @@
         {
             $html = "<a class=\"MenuEntry\" link-id=\"".$this->getLinkid()."\" onclick=\"AnimaSections.open(this)\">";
             $html .= "<div class=\"aligner\"><div class=\"icon\"><div class=\"media ".$this->getLinkid()."\"></div></div></div>";
-            $html .= "<div class=\"text\">".$this->getValue()."</div>";
+            $html .= "<div class=\"text\">".$this->getValue()."</div></a>";
 
             return $html;
         }
@@ -109,11 +109,13 @@
         }
 
         function getHTML() : string {
-            $html = $this.$this->mainRow;
+            $html = $this->mainRow;
             $html .= $this->getMenuButton()->getHTML();
             $html .= "<nav class=\"MenuEntries\">";
 
-            foreach($this->getItems() as $item) {
+            $length = count($this->getItems());
+            for($i = 0; $i < $length; $i++) {
+                $item = ($this->getItems())[$i];
                 $html .= $item->getHTML();
             }
             $html .= "</nav></div>";
@@ -131,6 +133,3 @@
             parent::__construct(true);
         }
     }
-
-    echo (new SmartphoneMenu())->getHTML();
-    echo (new DesktopMenu())->getHTML();

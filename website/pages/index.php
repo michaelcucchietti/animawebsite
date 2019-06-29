@@ -37,7 +37,9 @@
 </div>
 <?php
     require "menuitems.php";
-?>
+    echo (new SmartphoneMenu())->getHTML();
+    echo (new DesktopMenu())->getHTML();
+    ?>
 <div class="scrollbar">
     <div class="wider">
         <div class="seeker"></div>

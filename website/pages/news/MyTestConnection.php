@@ -53,5 +53,11 @@ class MyTestConnection extends Connection
         parent::__construct("localhost", "animatest", "test", "test1234");
     }
 }
+class SiteGroundConnection extends Connection {
+    public function __construct()
+    {
+        parent::__construct("localhost", "insidea7_publications2", "insidea7_pubs2", "Koporge@18");
+    }
+}
 
 $connection = new MyTestConnection();
