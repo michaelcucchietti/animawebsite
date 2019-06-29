@@ -162,9 +162,43 @@
         }
     }
 
+    class HiddenItemToLoad {
+        private $value;
+        function __construct($url) {
+            $this->value = $url;
+        }
+
+        function getHTML() : string  {
+            return "<div class='displayNone' animasource=\"".$this->value."\"></div>";
+        }
+    }
+    class PreloaderCompiler {
+        private $toload = array();
+        function __construct($idA) {
+            global $connection;
+            $connection->connect();
+            $result = $connection->query("SELECT resourcepreloader.value as relativeURL from resourcepreloader, articles where articles.id like idA and idA like '".$idA."'");
+
+            while($row = $result->fetch_assoc()) {
+                $this->toload[count($this->toload)] = new HiddenItemToLoad($row['relativeURL']);
+            }
+            $connection->close();
+        }
+
+        function getHTML() : string {
+            $html = "";
+            foreach($this->toload as $item) {
+                $html .= $item->getHTML();
+            }
+            return $html;
+        }
+    }
+
     $ida = $_GET['id'];
     $article = new ArticleInside($ida);
+    $preloader = new PreloaderCompiler($ida);
 
     echo "<article class='ContentBlock newsarticle'><div class='data'>";
+    echo $preloader->getHTML();
     echo $article->getHTML();
     echo "</div></article>";

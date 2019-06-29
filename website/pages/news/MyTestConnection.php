@@ -60,4 +60,4 @@ class SiteGroundConnection extends Connection {
     }
 }
 
-$connection = new MyTestConnection();
+$connection = new SiteGroundConnection();
