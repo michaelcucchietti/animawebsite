@@ -162,7 +162,7 @@
         }
     }
 
-    $ida = $_GET['id'];
+    $ida = $_POST['id'];
     $article = new ArticleInside($ida);
 
     echo "<article class='ContentBlock newsarticle'><div class='data'>";

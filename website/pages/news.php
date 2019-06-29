@@ -95,7 +95,7 @@
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
         <?php
-            if(count($_GET) == 0) {
+            if(count($_POST) == 0) {
                 include "news/articles.php";
             } else {
                 include "news/article.php";

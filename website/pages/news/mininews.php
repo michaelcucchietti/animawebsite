@@ -31,6 +31,7 @@
         }
 
         function getHTML() : string {
+
             return "<span class=\"element\" anima-article-id=\"".$this->getId()."\">".$this->getTitolo()."</span>";
         }
 
@@ -53,14 +54,16 @@
                 $this->items[$counter++] = new MiniItem($row['id'], $row['titolo']);
             }
             if(!$wasOpened)
-                $connection->close();               // if connection was closed, then close it again, otherwise maintain connection status
+                $connection->close();               // if connection was closed, then close it again, otherwise maintain connection state
         }
 
         public function getHTML() : string {
-            $html = "";
+            $html = "<form name='mininews_form' method='POST' action='/pages/news.php'>";
+            $html .= "<input type='hidden' name='id' />";
             for($i = 0; $i < count($this->items); $i++) {
                 $html .= $this->items[$i]->getHTML();
             }
+            $html .= "</form>";
             return $html;
         }
     }

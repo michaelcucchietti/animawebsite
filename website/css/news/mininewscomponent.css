@@ -48,7 +48,8 @@ div.newscomponent span.element {
     position: relative;
     top:0;
     left:0;
-    height: 5vh;
+    min-height: 5vh;
+    height: auto;
     width: 100%;
 
     flex-grow: 1!important;

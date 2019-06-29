@@ -11,7 +11,7 @@ var AnimaNews = AnimaNews || {
     news_deltaopacity : 0,
     news_rootLink : "/pages/news.php?",
     deactiveNews: function() {
-        var children = AnimaNews.mininewscomponent.children;
+        var children = AnimaNews.mininewscomponent.getElementsByTagName('form')[0].getElementsByTagName("span");
         var stepOpacity = children.length === 1 ? AnimaNews.news_deltaopacity : AnimaNews.news_deltaopacity / (children.length-1);
         for(var i = 0; i < children.length; i++) {
             var child = children[i];
@@ -21,7 +21,7 @@ var AnimaNews = AnimaNews || {
         }
     },
     activeNews: function() {
-        var children = AnimaNews.mininewscomponent.children;
+        var children = AnimaNews.mininewscomponent.getElementsByTagName('form')[0].getElementsByTagName("span");
         for(var i = 0; i < children.length; i++) {
             var child = children[i];
             if(child != null && child.isElement()) {
@@ -68,7 +68,7 @@ var AnimaNews = AnimaNews || {
 
         AnimaNews.mininewscomponent.addEventListener('mouseenter', AnimaNews.activeAll);
         AnimaNews.mininewscomponent.addEventListener('mouseleave', AnimaNews.deactiveAll);
-        AnimaNews.loadChildrenEvents(AnimaNews.mininewscomponent.children);
+        AnimaNews.loadChildrenEvents(AnimaNews.mininewscomponent.getElementsByTagName('form')[0].getElementsByTagName("span"));
         AnimaNews.deactiveAll();
     },
     open_mininews_element : function(element) {
@@ -76,7 +76,15 @@ var AnimaNews = AnimaNews || {
             return;
 
         var articleID = element.getAttribute('anima-article-id');
-        var link = AnimaNews.news_rootLink + 'id=' + articleID;
-        location.href = link;
+        var form = element.parentElement;
+
+        var hiddens = form.getElementsByAttribute('type', 'hidden');
+        if(hiddens.length === 1) {
+            var inputData = hiddens[0];
+            inputData.setAttribute('value', articleID);
+            form.submit();
+        } else {
+            location.href="/pages/news.php";        // if error open archive
+        }
     }
 };
