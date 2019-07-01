@@ -141,7 +141,6 @@ article.newsarticle div.data div.news_article_inside h1.title {
     margin-bottom: 10vh;
     width:60%;
 }
-
 article.newsarticle div.data div.news_article_inside div.testo {
     display: flex;
     position: relative;
@@ -167,7 +166,6 @@ article.newsarticle div.data div.news_article_inside div.testofinale {
     align-items: center;
     margin-bottom: 15vh;
 }
-
 article.newsarticle div.data div.news_article_inside div.testo span, article.newsarticle div.data div.news_article_inside div.testofinale span {
     display: block;
     position: relative;
@@ -178,8 +176,6 @@ article.newsarticle div.data div.news_article_inside div.testo span, article.new
     width: 60%;
     min-height: 10vh;
 }
-
-
 article.newsarticle div.data div.news_article_inside div.article_image {
     display: flex;
     position: relative;
@@ -191,7 +187,6 @@ article.newsarticle div.data div.news_article_inside div.article_image {
     justify-content: center;
     margin: 10vh 0;
 }
-
 article.newsarticle div.data div.news_article_inside div.article_image div.infografica_emozioni_granulare {
     display: block;
     height: 60vh;
@@ -207,7 +202,7 @@ article.newsarticle div.data div.news_article_inside div.article_image div.emozi
     height: 100vh;
     width: 100%;
     background-size: 100% auto;
-    background-image: url('../../images/news/infograficaemozioni/copertina.png');
+    background-image: url('../../images/news/infograficaemozioni/copertina.jpg');
     background-repeat: no-repeat;
     background-position: center;
 

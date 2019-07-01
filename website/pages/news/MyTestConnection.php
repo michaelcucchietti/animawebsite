@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class Connection {
     private $server, $db_name, $username, $password;
     private $conn;
@@ -60,4 +57,4 @@ class SiteGroundConnection extends Connection {
     }
 }
 
-$connection = new SiteGroundConnection();
+$connection = new MyTestConnection();

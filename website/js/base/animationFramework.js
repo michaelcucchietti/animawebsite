@@ -1211,7 +1211,7 @@ var Animation = function() {
     this.differentSamplingsByDevices = true;
     this.stepTime = 0.022;					// 22 ms ad aggiornamento -> f = 1000/22 = 45Hz (molto buona)
     this.mobileStepTime = 0.035;            // 35 ms ad aggiornamento -> f = 1000/35 = 28Hz (sufficiente)
-    this.desktopStepTime = 0.022;           // 22 ms ad aggiornamento -> f = 1000/22 = 45Hz (molto buona)
+    this.desktopStepTime = 0.012;           // 12 ms ad aggiornamento -> f = 1000/12 = 83Hz (molto buona)
     this.priority = 1;                      // Default priority is set to 1
     this.onEndAnimation = null;             // this is called once animation ended, through a timeout of animationTime seconds
     this.onStartAnimation = null;           // this is called once animation starts.
