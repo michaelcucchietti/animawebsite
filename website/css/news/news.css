@@ -2,6 +2,10 @@ article.articles {
     height: auto;
     min-height: 100vh;
     background-color: rgb(240,240,240);
+    cursor: url('../../images/cursors/black_contrast.cur'), auto
+}
+article.articles * {
+    cursor: inherit;
 }
 article.articles div.data {
     position: relative;
@@ -10,12 +14,12 @@ article.articles div.data {
     top:0;
 
     align-items: center;
-    justify-content: center;
-    padding-top:0;
+    justify-content: flex-start;
+    padding:0;
 }
 
 article.articles div.data div.newsbar {
-    position: fixed;
+    position: relative;
     display: flex;
     height: 15.87vh;
     width: 100vw;
@@ -34,7 +38,6 @@ article.articles div.data div.newsbar {
     background-color: rgb(40,40,40);
     z-index: 1;
 }
-
 article.articles div.data div.newsbar h1 {
     display: block;
     height: auto;
@@ -49,12 +52,12 @@ article.articles div.data div.newsbar h1 {
 article.articles div.data div.news_articles {
     display: flex;
     position: relative;
-    top:15.87vh;
+    top:0;
     left:0;
     height: 100%;
     width: 80%;
 
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-content: space-between;
     flex-grow: 0;
@@ -62,61 +65,76 @@ article.articles div.data div.news_articles {
 
     box-sizing: border-box;
     border:0;
+    margin: 5vh 0;
     padding: 5vh;
-    margin: 0;
     flex-wrap: wrap;
 }
-article.articles div.data div.news_articles a.news_article {
+article.articles div.data div.news_articles div.news_article {
     display: flex;
     position: relative;
     top:0;
     left:0;
-    height: 25vh;
-    width: 45%;
+    min-height: 9vh;
+    height: auto;
+    max-height: 25vh;
+    width: 100%;
 
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-content: flex-start;
     flex-grow: 0;
     flex-shrink: 0;
 
-    border: 0.1vh solid rgba(100,100,100,0.4);
-    border-radius: 1vh;
-    padding: 3vh;
-    margin: 2.5vh;
+    border-bottom: 0.1vh solid rgba(40,40,40,0.2);
+    padding: 2vh;
     box-sizing: border-box;
     text-decoration: none;
 }
-article.articles div.data div.news_articles a.news_article:hover {
-    cursor: pointer;
-    border: 0.1vh solid rgba(46,190,186 ,1);
-    background-color: rgba(46,190,186, 0.04);
+article.articles div.data div.news_articles div.news_article:hover {
+    background-color: rgba(196, 230, 228,0.2);
 }
-article.articles div.data div.news_articles a.news_article p.article_title {
+article.articles div.data div.news_articles div.news_article div.content {
     display: flex;
     position: relative;
     top:0;
     left:0;
-    height: 30%;
-    width: 100%;
-
+    height: auto;
+    width: 80%;
     flex-direction: column;
     justify-content: flex-start;
     align-content: flex-start;
+
+    padding:0;
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+}
+article.articles div.data div.news_articles div.news_article div.content p.article_title {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: 5vh;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     flex-grow: 0;
     flex-shrink: 0;
 
-    margin: 0 0 1vh;
     box-sizing: border-box;
     color: rgb(40, 40, 40);
+    text-shadow: none;
 }
-article.articles div.data div.news_articles a.news_article span.article_description {
+article.articles div.data div.news_articles div.news_article div.content span.article_description {
     display: flex;
     position: relative;
     top:0;
     left:0;
-    height: 70%;
+    height: 0;
     width: 100%;
+    overflow: hidden;
 
     flex-direction: column;
     justify-content: flex-start;
@@ -124,9 +142,49 @@ article.articles div.data div.news_articles a.news_article span.article_descript
     flex-grow: 0;
     flex-shrink: 0;
 
-    margin: 0 0 1vh;
     box-sizing: border-box;
     color: rgba(40,40,40,0.6);
+}
+article.articles div.data div.news_articles div.news_article div.actions {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: auto;
+    width: 20%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding:0;
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+}
+article.articles div.data div.news_articles div.news_article div.actions button.goArticle {
+    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    height: 5vh;
+    width: 15vh;
+    max-width: 90%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin:0;
+    padding:0;
+    border:0;
+    border-radius: 1vh;
+    cursor: url('../../images/cursors/white_contrast.cur'), auto;
+
+
+    box-sizing: border-box;
+    background-color: rgba(46, 190, 186, 1);
+    color: rgb(224, 224, 224);
+    text-transform: uppercase;
 }
 
 
