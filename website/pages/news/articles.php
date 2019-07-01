@@ -51,7 +51,13 @@
             return $html;
         }
     }
+    class NewsBar {
+        public function getHTML() : string {
+            return "<div class='newsbar'><h1>News</h1></div>";
+        }
+    }
 
     echo "<article class='ContentBlock articles'><div class='data'>";
+    echo (new NewsBar())->getHTML();
     echo (new Articles())->getHTML();
     echo "</div></article>";
