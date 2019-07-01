@@ -187,7 +187,9 @@ article.articles div.data div.news_articles div.news_article div.actions button.
     text-transform: uppercase;
 }
 
-
+article.articles div.data div.news_articles div.news_article div.actions button.goArticle:hover {
+    background: linear-gradient(180deg, rgba(69, 209, 206, 1) 90%, rgba(34,138,136,1) 100%);
+}
 
 
 article.newsarticle {

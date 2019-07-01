@@ -48,7 +48,7 @@
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
         <article class="ContentBlock contentAbout" >
-            <div class="newscomponent whiteText" id="mininews">
+            <div class="newscomponent whiteText displayNoneSmartphone" id="mininews">
                 <span class="articleTitle">ultimi articoli</span>
                 <?php
                     include "news/mininews.php";
