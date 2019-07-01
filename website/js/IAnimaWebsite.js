@@ -269,14 +269,19 @@ var AnimaMenu = AnimaMenu || {
         for(var i = 0; i < this.navLinks.length; i++) {
             var link = this.navLinks[i];
             link.onmouseenter = function() {
-                this.maintainEntryText = true;
-                AnimaMenu.desktopMenu.showTextEntry(this);
+                if(AnimaMenu.desktopMenu.menuOpened) {
+                    this.maintainEntryText = true;
+                    AnimaMenu.desktopMenu.showTextEntry(this);
+                }
+
             };
             link.onmouseleave = function() {
                 this.maintainEntryText = false;
                 AnimaMenu.desktopMenu.hideTextEntry(this);
             };
         }
+        this.navigationBar.addClasses("displayNone");         // preclose menu
+
 
         this.showTextEntry = function(entry) {
             var textElem = entry.getElementsByClassName("text")[0];
