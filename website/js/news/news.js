@@ -91,7 +91,7 @@ var AnimaNews = AnimaNews || {
         AnimaNews.last_opened_item = null;
     },
     open_archive_item: function(element) {
-        if(element == null || !element.isElement())
+        if(element == null || !element.isElement() || isMobile())
             return;
 
         var descs = element.getElementsByClassName('article_description');

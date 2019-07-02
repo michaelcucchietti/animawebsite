@@ -140,6 +140,10 @@ footer div.anima div.logo {
     div.comingsoon {
         background-image: url("../images/menu/cs.png");
     }
+    div.publications {
+        background-image: url("../images/menu/news.png");
+    }
+
     footer div.separatorFooter {
         background-color: rgba(224,224,224,0.3);
     }

@@ -74,6 +74,7 @@ var AnimaSections = AnimaSections || {
         this.sections.addSectionLink('contacts', 'contacts.php');
         this.sections.addSectionLink('portfolio', 'portfolio.php');
         this.sections.addSectionLink('sitemap', 'sitemap.php');
+        this.sections.addSectionLink('publications', "news.php");
 
         this.open = function(sectionID) {
             this.sections.openID(sectionID);
@@ -81,7 +82,7 @@ var AnimaSections = AnimaSections || {
     },
     sectionManager: null,
     initialize: function() {
-            AnimaSections.sectionManager = new AnimaSections.SectionManager();
+        AnimaSections.sectionManager = new AnimaSections.SectionManager();
     },
     open: function(linkedElement) {
         if(AnimaSections.sectionManager == null) {
@@ -715,7 +716,7 @@ var AnimaLoader = AnimaLoader || {
     },
     loadArrowAboutAnimation: function() {
         var arrow = document.getElementById("downArrowAbout");
-        var sectionAbout = document.getElementById("about");
+        var sectionAbout = document.getElementsByTagName("section")[0];
         var contentAbout = document.getElementsByClassName("contentAboutDescription")[0];
 
 

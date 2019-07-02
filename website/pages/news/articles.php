@@ -27,7 +27,7 @@
                 "<p class=\"article_title\">".$this->getTitle()."</p>".
                 "<span class='article_description'>".$this->getDescrizione()."</span>".
                 "</div><div class='actions'>".
-                "<button class='goArticle' anima-article-id=\"".$this->getID()."\" onclick='AnimaNews.openArticle(this)'>Apri</button>".
+                "<button class='goArticle' anima-article-id=\"".$this->getID()."\" onclick='AnimaNews.openArticle(this)'>Leggi</button>".
                 "</div></div>";
         }
     }
@@ -56,7 +56,7 @@
     }
     class NewsBar {
         public function getHTML() : string {
-            return "<div class='newsbar'><h1>News</h1></div>";
+            return "<div class='newsbar'><h1>Pubblicazioni</h1></div>";
         }
     }
 
