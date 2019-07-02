@@ -25,7 +25,6 @@
     <link rel="stylesheet" type="text/css" href="../css/news/news.css" />
 
 
-
     <link rel='shortcut icon' type="image/x-icon" href="../favicon.ico" />
 
 </head>
