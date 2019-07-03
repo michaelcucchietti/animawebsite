@@ -22,10 +22,13 @@
         }
 
         public function getHTML() : string {
-            return "<a class=\"news_article\" href=\"?id=".$this->getID()."\">".
+            return "<div class=\"news_article\" onclick='AnimaNews.open_archive_item(this)'>".
+                "<div class='content'>".
                 "<p class=\"article_title\">".$this->getTitle()."</p>".
                 "<span class='article_description'>".$this->getDescrizione()."</span>".
-                "</a>";
+                "</div><div class='actions'>".
+                "<button class='goArticle' anima-article-id=\"".$this->getID()."\" onclick='AnimaNews.openArticle(this)'>Leggi</button>".
+                "</div></div>";
         }
     }
     class Articles {
@@ -51,7 +54,13 @@
             return $html;
         }
     }
+    class NewsBar {
+        public function getHTML() : string {
+            return "<div class='newsbar'><h1>Pubblicazioni</h1></div>";
+        }
+    }
 
     echo "<article class='ContentBlock articles'><div class='data'>";
+    echo (new NewsBar())->getHTML();
     echo (new Articles())->getHTML();
     echo "</div></article>";

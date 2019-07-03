@@ -22,7 +22,6 @@
     <link rel="stylesheet" type="text/css" href="../css/Contents.css" />
     <link rel="stylesheet" type="text/css" href="../css/textcss.css" />
     <link rel="stylesheet" type="text/css" href="../css/scrollbar/scrollbar.css" />
-    <link rel="stylesheet" type="text/css" href="../css/news/mininewscomponent.css" />
 
 
 
@@ -48,14 +47,6 @@
 <div class="DefaultContainer SectionsContainer" id="sectionContainer">
     <section class="DefaultContainer SectionBlock" id="pagesection">
         <article class="ContentBlock contentAbout" >
-            <div class="newscomponent whiteText" id="mininews">
-                <span class="articleTitle">ultimi articoli</span>
-                <?php
-                    include "news/mininews.php";
-                    $mini = new MiniNews();
-                    echo $mini->getHTML();
-                ?>
-            </div>
             <div class="data">
                 <div class="contentAnima"  >
                     <div class="writing" >
@@ -65,7 +56,7 @@
                 <h2 class="dataCenterCenter">
                     In un mondo che corre verso il digitale, Anima &egrave; una nuova realt&agrave;, tutta italiana, che offre supporto, strumenti e metodi a imprese e professionisti di ogni settore.
                 </h2>
-                <div id="downArrowAbout arrow" ></div>
+                <div id="downArrowAbout" class="arrow" ></div>
             </div>
         </article>
         <article class="ContentBlock contentAboutDescription">

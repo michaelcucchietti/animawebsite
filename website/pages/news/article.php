@@ -3,7 +3,7 @@
 
     abstract class Content {
         private $classes = array();
-        private $id, $pn;
+        private $id, $pn, $device;
         protected function getClassString() : string {
             $classString = "";
             $length = count($this->classes);
@@ -14,13 +14,22 @@
             }
             return $classString;
         }
+        protected function getDeviceClass() : string {
+            if($this->device == 1)
+                return " displayNoneSmartphone";
+            else if($this->device == 2)
+                return " displayNoneDesktop";
+
+            return "";
+        }
         private function addClass($className) : void {
             $this->classes[count($this->classes)] = $className;
         }
 
-        function __construct($id, $part_number) {
+        function __construct($id, $part_number, $device) {
             $this->id = $id;
             $this->pn = $part_number;
+            $this->device = $device;
         }
 
         protected function readClasses() {
@@ -35,34 +44,34 @@
         abstract function getHTML() : string;
     }
     class ImageContent extends Content {
-        function __construct($idA, $pn) {
-            parent::__construct($idA, $pn);
+        function __construct($idA, $pn, $device) {
+            parent::__construct($idA, $pn, $device);
             $this->readClasses();
         }
 
         function getHTML(): string
         {
-            return "<div class='article_image'>".
+            return "<div class='article_image".$this->getDeviceClass()."'>".
                 "<div class='".$this->getClassString()."'></div>".
                 "</div>";
         }
     }
     class TextContent extends Content {
         private $text;
-        function __construct($idA, $pn, $text) {
-            parent::__construct($idA, $pn);
+        function __construct($idA, $pn, $text, $device) {
+            parent::__construct($idA, $pn, $device);
             $this->readClasses();
             $this->text = $text;
         }
 
         function getHTML(): string {
-            return "<div class='".$this->getClassString()."'>$this->text</div>";
+            return "<div class='".$this->getClassString().$this->getDeviceClass()."'>$this->text</div>";
         }
     }
     class H1Content extends Content {
         private $text;
-        function __construct($idA, $pn, $text) {
-            parent::__construct($idA, $pn);
+        function __construct($idA, $pn, $text, $device) {
+            parent::__construct($idA, $pn, $device);
             $this->readClasses();
             $this->text = $text;
         }
@@ -73,8 +82,8 @@
     }
     class H2Content extends Content {
         private $text;
-        function __construct($idA, $pn, $text) {
-            parent::__construct($idA, $pn);
+        function __construct($idA, $pn, $text, $device) {
+            parent::__construct($idA, $pn, $device);
             $this->readClasses();
             $this->text = $text;
         }
@@ -85,8 +94,8 @@
     }
     class H3Content extends Content {
         private $text;
-        function __construct($idA, $pn, $text) {
-            parent::__construct($idA, $pn);
+        function __construct($idA, $pn, $text, $device) {
+            parent::__construct($idA, $pn, $device);
             $this->readClasses();
             $this->text = $text;
         }
@@ -108,19 +117,19 @@
             $this->idA = $idArticle;
         }
 
-        function getContent($pn, $type, $value) : Content {
+        function getContent($pn, $type, $value, $device) : Content {
             if($type == 0)
-                return new TextContent($this->idA, $pn, $value);
+                return new TextContent($this->idA, $pn, $value, $device);
             else if($type == 1)
-                return new H1Content($this->idA, $pn, $value);
+                return new H1Content($this->idA, $pn, $value, $device);
             else if($type == 2)
-                return new H2Content($this->idA, $pn, $value);
+                return new H2Content($this->idA, $pn, $value, $device);
             else if($type == 3)
-                return new H3Content($this->idA, $pn, $value);
+                return new H3Content($this->idA, $pn, $value, $device);
             else if($type == 4)
-                return new ImageContent($this->idA, $pn);
+                return new ImageContent($this->idA, $pn, $device);
             else
-                return new NullContent(null, 0);
+                return new NullContent(null, 0, $device);
         }
     }
     class ArticleInside {
@@ -134,7 +143,8 @@
                 "resources.resourceType as tipo, ".
                 "resources.value as valore, ".
                 "resources.idA, ".
-                "part_number as ordine ".
+                "part_number as ordine, ".
+                "device ".
                 "from articles, resources ".
                 "where articles.id like resources.idA ".
                 "order by part_number ASC");
@@ -144,8 +154,9 @@
                 $this->titolo = $row['titolo'];
                 $tipo = $row['tipo'];
                 $valore = $row['valore'];
-                $ordine = "o_".$row['ordine'];
-                $content = $factory->getContent($row['ordine'], $tipo, $valore);
+                $ordine = "o_".$row['ordine']."_".$row['device'];
+                $device = $row['device'];
+                $content = $factory->getContent($row['ordine'], $tipo, $valore, $device);
                 $this->contents[$ordine] = $content;
             }
             $connection->close();

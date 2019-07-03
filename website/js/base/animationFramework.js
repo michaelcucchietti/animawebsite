@@ -178,6 +178,28 @@ Object.prototype.animateOpacity = function(animationTime, animationCurve, opacit
         return;
     (this.animationOpacity(animationTime, animationCurve, opacityPercent)).start();
 };
+Object.prototype.animationWidth = function(animationTime, animationCurve, widthValue) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    return (new Animations.AnimationWidth(this, animationTime, animationCurve, widthValue));
+
+};
+Object.prototype.animateWidth = function(animationTime, animationCurve, widthValue) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    (this.animationWidth(animationTime, animationCurve, widthValue)).start();
+};
+Object.prototype.animationHeight = function(animationTime, animationCurve, heightValue) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    return (new Animations.AnimationHeight(this, animationTime, animationCurve, heightValue));
+
+};
+Object.prototype.animateHeight = function(animationTime, animationCurve, heightValue) {
+    if(!AnimaUtility.isElement(this))
+        return;
+    (this.animationHeight(animationTime, animationCurve, heightValue)).start();
+};
 
 /* Global Variable declaration */
 var number_of_oscillation = 2;

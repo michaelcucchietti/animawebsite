@@ -89,6 +89,7 @@
             $this->addItem("home", "Home");
             $this->addItem("digitals", "Digitals");
             $this->addItem("logostudio", "Logo Studio");
+            $this->addItem("publications", "Pubblicazioni");
             $this->addItem("comingsoon", "Coming Soon");
 
         }
